@@ -10,7 +10,7 @@ using Wypozyczalnia.Models;
 
 namespace Wypozyczalnia.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private Entities db = new Entities();
@@ -36,28 +36,6 @@ namespace Wypozyczalnia.Controllers
             return View(aspNetUsers);
         }
 
-        // GET: Admin/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Admin/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName")] AspNetUsers aspNetUsers)
-        {
-            if (ModelState.IsValid)
-            {
-                db.AspNetUsers.Add(aspNetUsers);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(aspNetUsers);
-        }
 
         // GET: Admin/Edit/5
         public ActionResult Edit(string id)
