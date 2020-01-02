@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,14 +170,52 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>UserManager.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Samochod.cs">
+      <DependentUpon>SamochodyModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SamochodyModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamochodyModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SamochodyModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamochodyModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SamochodyModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamochodyModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserManager.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManager.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserManager.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManager.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserManager.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManager.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -188,8 +228,42 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\SamochodyModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SamochodyModels.edmx</DependentUpon>
+      <LastGenOutput>SamochodyModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SamochodyModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SamochodyModels.edmx</DependentUpon>
+      <LastGenOutput>SamochodyModels.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UserManager.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserManager.edmx</DependentUpon>
+      <LastGenOutput>UserManager.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UserManager.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserManager.edmx</DependentUpon>
+      <LastGenOutput>UserManager.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\UserManager.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserManager.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserManager.edmx.diagram">
+      <DependentUpon>UserManager.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\SamochodyModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SamochodyModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SamochodyModels.edmx.diagram">
+      <DependentUpon>SamochodyModels.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -212,9 +286,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home1\About.cshtml" />
+    <Content Include="Views\Home1\Contact.cshtml" />
+    <Content Include="Views\Home1\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -235,6 +309,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +331,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
