@@ -15,7 +15,7 @@ namespace Wypozyczalnia.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Ta wiadomosc zostala wyslana przez serwer";
 
             return View();
         }
