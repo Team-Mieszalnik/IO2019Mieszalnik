@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +183,24 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Samochod.cs">
+      <DependentUpon>SamochodyModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SamochodyModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamochodyModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SamochodyModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamochodyModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SamochodyModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamochodyModels.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserManager.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +228,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\SamochodyModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SamochodyModels.edmx</DependentUpon>
+      <LastGenOutput>SamochodyModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SamochodyModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SamochodyModels.edmx</DependentUpon>
+      <LastGenOutput>SamochodyModels.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\UserManager.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UserManager.edmx</DependentUpon>
@@ -227,6 +256,13 @@
     </EntityDeploy>
     <Content Include="Models\UserManager.edmx.diagram">
       <DependentUpon>UserManager.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\SamochodyModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SamochodyModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SamochodyModels.edmx.diagram">
+      <DependentUpon>SamochodyModels.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -277,6 +313,8 @@
     <Content Include="Views\Admin\Details.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
