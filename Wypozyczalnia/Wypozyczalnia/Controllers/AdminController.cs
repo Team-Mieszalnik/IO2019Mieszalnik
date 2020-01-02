@@ -10,6 +10,7 @@ using Wypozyczalnia.Models;
 
 namespace Wypozyczalnia.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private Entities db = new Entities();
