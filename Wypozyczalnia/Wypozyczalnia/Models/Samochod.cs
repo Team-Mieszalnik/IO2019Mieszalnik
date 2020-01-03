@@ -11,20 +11,24 @@ namespace Wypozyczalnia.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Samochod
     {
         public int Id { get; set; }
         public string Marka { get; set; }
         public string Model { get; set; }
         public System.DateTime Rok { get; set; }
+        [Required]
         public Nullable<int> LimitKilometrow { get; set; }
         public string Opony { get; set; }
         public bool AC { get; set; }
         public string NrRejestracyjny { get; set; }
         public byte[] Zdjecie { get; set; }
         public decimal Cena { get; set; }
+        [Required]
         public Nullable<System.DateTime> PoczatekUmowy { get; set; }
+        [Required]
         public Nullable<System.DateTime> KoniecUmowy { get; set; }
         public string UserId { get; set; }
         public string Opis { get; set; }
