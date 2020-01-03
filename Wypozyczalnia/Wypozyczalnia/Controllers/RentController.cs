@@ -62,6 +62,37 @@ namespace Wypozyczalnia.Controllers
             return View(samochod);
         }
 
+        // GET: Rent/CreateRent/5
+        public ActionResult CreateRent(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Samochod samochod = db.Samochod.Find(id);
+            if (samochod == null)
+            {
+                return HttpNotFound();
+            }
+            return View(samochod);
+        }
+
+        // POST: Rent/CreateRent/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateRent([Bind(Include = "Id,Marka,Model,Rok,LimitKilometrow,Opony,AC,NrRejestracyjny,Zdjecie,Cena,PoczatekUmowy,KoniecUmowy,UserId,Opis")] Samochod samochod)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(samochod).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(samochod);
+        }
+
         // GET: Rent/Edit/5
         public ActionResult Edit(int? id)
         {

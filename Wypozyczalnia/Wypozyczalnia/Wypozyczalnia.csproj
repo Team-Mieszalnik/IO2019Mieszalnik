@@ -321,6 +321,7 @@
     <Content Include="Views\Rent\Details.cshtml" />
     <Content Include="Views\Rent\Edit.cshtml" />
     <Content Include="Views\Rent\Index.cshtml" />
+    <Content Include="Views\Rent\CreateRent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
