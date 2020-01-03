@@ -39,6 +39,15 @@ textarea {
     padding-bottom: 3rem !important;
 }
 
+.rent-whole {
+    /*padding-top: 1rem !important;*/
+    padding-bottom: 2rem !important;
+}
+
+.rent-single {
+    padding-top: 2rem !important;
+}
+
 /*.lead {
     font-size: 1.25rem;
     font-weight: 300;
