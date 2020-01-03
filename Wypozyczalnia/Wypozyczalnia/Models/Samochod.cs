@@ -18,11 +18,15 @@ namespace Wypozyczalnia.Models
         public string Marka { get; set; }
         public string Model { get; set; }
         public System.DateTime Rok { get; set; }
-        public int LimitKilometrow { get; set; }
+        public Nullable<int> LimitKilometrow { get; set; }
         public string Opony { get; set; }
         public bool AC { get; set; }
         public string NrRejestracyjny { get; set; }
         public byte[] Zdjecie { get; set; }
-        public Nullable<decimal> Cena { get; set; }
+        public decimal Cena { get; set; }
+        public Nullable<System.DateTime> PoczatekUmowy { get; set; }
+        public Nullable<System.DateTime> KoniecUmowy { get; set; }
+        public string UserId { get; set; }
+        public string Opis { get; set; }
     }
 }

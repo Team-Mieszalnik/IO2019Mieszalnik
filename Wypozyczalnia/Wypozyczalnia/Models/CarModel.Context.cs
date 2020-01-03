@@ -13,10 +13,10 @@ namespace Wypozyczalnia.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities1 : DbContext
+    public partial class Entities4 : DbContext
     {
-        public Entities1()
-            : base("name=Entities1")
+        public Entities4()
+            : base("name=Entities4")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Wypozyczalnia.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Samochod> Samochods { get; set; }
+        public virtual DbSet<Samochod> Samochod { get; set; }
     }
 }

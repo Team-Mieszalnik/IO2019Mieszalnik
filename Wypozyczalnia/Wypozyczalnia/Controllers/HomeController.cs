@@ -12,12 +12,18 @@ namespace Wypozyczalnia.Controllers
 {
     public class HomeController : Controller
     {
-        private Entities1 db = new Entities1();
+        private Entities4 db = new Entities4();
+
+        //// GET: Home
+        //public ActionResult Index()
+        //{
+        //    return View(db.Samochod.ToList());
+        //}
 
         // GET: Home
         public ActionResult Index()
         {
-            return View(db.Samochods.ToList());
+            return View(db.Samochod.Select(n => n).Where(c => c.UserId == null));
         }
 
         // GET: Home/Details/5
@@ -27,7 +33,7 @@ namespace Wypozyczalnia.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Samochod samochod = db.Samochods.Find(id);
+            Samochod samochod = db.Samochod.Find(id);
             if (samochod == null)
             {
                 return HttpNotFound();
@@ -35,85 +41,6 @@ namespace Wypozyczalnia.Controllers
             return View(samochod);
         }
 
-        //// GET: Home/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //// POST: Home/Create
-        //// Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
-        //// Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "Id,Marka,Model,Rok,LimitKilometrow,Opony,AC,NrRejestracyjny,Zdjecie,Cena")] Samochod samochod)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Samochods.Add(samochod);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(samochod);
-        //}
-
-        //// GET: Home/Edit/5
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Samochod samochod = db.Samochods.Find(id);
-        //    if (samochod == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(samochod);
-        //}
-
-        //// POST: Home/Edit/5
-        //// Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
-        //// Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "Id,Marka,Model,Rok,LimitKilometrow,Opony,AC,NrRejestracyjny,Zdjecie,Cena")] Samochod samochod)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(samochod).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(samochod);
-        //}
-
-        //// GET: Home/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Samochod samochod = db.Samochods.Find(id);
-        //    if (samochod == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(samochod);
-        //}
-
-        //// POST: Home/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Samochod samochod = db.Samochods.Find(id);
-        //    db.Samochods.Remove(samochod);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
 
         protected override void Dispose(bool disposing)
         {

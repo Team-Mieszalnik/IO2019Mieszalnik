@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<Wypozyczalnia.Models.Samochod>
 
 @{
-    ViewBag.Title = "Domek";
+    ViewBag.Title = "Index";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>Index</h2>
+
 
 <table class="table">
     <tr>
@@ -23,6 +24,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Cena)
         </th>
+
         <th></th>
     </tr>
 
@@ -44,7 +46,7 @@
             @Html.DisplayFor(modelItem => item.Cena)
         </td>
         <td>
-            @Html.ActionLink("Strzeguly", "Details", new { id=item.Id }) 
+            @Html.ActionLink("Szczegoly", "Details", new { id=item.Id })
         </td>
     </tr>
 }
