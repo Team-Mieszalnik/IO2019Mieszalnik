@@ -11,6 +11,7 @@ using Wypozyczalnia.Models;
 
 namespace Wypozyczalnia.Controllers
 {
+    [Authorize]
     public class RentController : Controller
     {
         private Entities4 db = new Entities4();
