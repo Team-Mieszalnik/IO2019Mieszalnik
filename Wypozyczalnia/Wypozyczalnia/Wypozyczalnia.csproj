@@ -174,6 +174,7 @@
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -315,6 +316,11 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Rent\Create.cshtml" />
+    <Content Include="Views\Rent\Delete.cshtml" />
+    <Content Include="Views\Rent\Details.cshtml" />
+    <Content Include="Views\Rent\Edit.cshtml" />
+    <Content Include="Views\Rent\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
