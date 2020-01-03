@@ -10,7 +10,7 @@
     @foreach (var item in Model)
     {
     <div class="rent-single">
-        <button type="button" class="btn stretched-link bg-info"   onclick="location.href='@Url.Action("Details", "Home",new { id = item.Id })'"  >
+        <button type="button" class="btn stretched-link"   onclick="location.href='@Url.Action("Details", "Home",new { id = item.Id })'"  >
             @*@Html.ActionLink("Szczegoly", "Details", new { id = item.Id })*@
 
             <!-- Image Section - set the background image for the header in the line below -->
