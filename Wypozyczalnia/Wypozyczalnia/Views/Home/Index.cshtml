@@ -6,23 +6,30 @@
 
 
 
-@foreach (var item in Model)
-{
-    <!-- Image Section - set the background image for the header in the line below -->
-    <section class="py-5 bg-image-full" style="background-image: url('images/@Html.DisplayFor(modelItem => item.Zdjecie)');">
-        <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-        <div style="height: 400px;"></div>
-    </section>
-    <!-- Content section -->
-    <section class="py-5">
-        <div class="container">
-            <h1>@Html.DisplayFor(modelItem => item.Marka) @Html.DisplayFor(modelItem => item.Model)</h1>
-            <p class="lead">Rocznik: @Html.DisplayFor(modelItem => item.Rok.Year)</p>
-            <p> Cena: @Html.DisplayFor(modelItem => item.Cena)</p> 
-            <p> @Html.DisplayFor(modelItem => item.Opis)</p>
-            <p class="btn  stretched-link" "> @Html.ActionLink("Szczegoly", "Details", new { id = item.Id })</p>
-            <p class="btn  stretched-link" ">@Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = item.Id }, null)</p>
-        </div>
-    </section>
-}
+<div class="btn-group-vertical rent-whole">
+    @foreach (var item in Model)
+    {
+    <div class="rent-single">
+        <button type="button" class="btn stretched-link bg-info"   onclick="location.href='@Url.Action("Details", "Home",new { id = item.Id })'"  >
+            @*@Html.ActionLink("Szczegoly", "Details", new { id = item.Id })*@
 
+            <!-- Image Section - set the background image for the header in the line below -->
+            <section class="py-5 bg-image-full" style="background-image: url('images/@Html.DisplayFor(modelItem => item.Zdjecie)');">
+                <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+                <div style="height: 400px;"></div>
+            </section>
+            <!-- Content section -->
+            <section class="py-5">
+                <div class="container">
+                    <h1>@Html.DisplayFor(modelItem => item.Marka) @Html.DisplayFor(modelItem => item.Model)</h1>
+                    <p class="lead">Rocznik: @Html.DisplayFor(modelItem => item.Rok.Year)</p>
+                    <p> Cena: @Html.DisplayFor(modelItem => item.Cena)</p>
+                    <p> @Html.DisplayFor(modelItem => item.Opis)</p>
+                    @*<p class="btn  stretched-link" "> @Html.ActionLink("Szczegoly", "Details", new { id = item.Id })</p>*@
+                    @*<p class="btn  stretched-link" ">@Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = item.Id }, null)</p>*@
+                </div>
+            </section>
+        </button>
+    </div>
+    }
+</div>
