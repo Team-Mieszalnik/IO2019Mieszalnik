@@ -256,4 +256,5 @@ paket-files/
 __pycache__/
 *.pyc
 
-App_Data/
+*.mdf
+*.ldf

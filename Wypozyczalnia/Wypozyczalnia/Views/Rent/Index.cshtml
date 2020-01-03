@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Wypozyczalnia.Models.Samochod>
+
+@{
+    ViewBag.Title = "Moje wypozyczenia";
+}
+
+
+    <div class="btn-group-vertical rent-whole">
+        @foreach (var item in Model)
+        {
+        <div class="rent-single">
+            <ul class="list-inline  rent-offer">
+                <li class="offer-item py-5 bg-image-full offer-image" style="background-image: url('images/@Html.DisplayFor(modelItem => item.Zdjecie)');" />
+                <li class="offer-item py-5">
+                    <div class="container">
+
+                        <h1>@Html.DisplayFor(modelItem => item.Marka) @Html.DisplayFor(modelItem => item.Model)</h1>
+                        <p>            Rocznik: @Html.DisplayFor(modelItem => item.Rok.Year)</p>
+                        <p>            Cena: @Html.DisplayFor(modelItem => item.Cena) </p>
+                        <p>            Limit kilometrow: @Html.DisplayFor(modelItem => item.LimitKilometrow)</p>
+                        <p>            Numer Rejestracyjny: @Html.DisplayFor(modelItem => item.NrRejestracyjny)</p>
+                        <p>            Poczatek Umowy: @Html.DisplayFor(modelItem => item.PoczatekUmowy)</p>
+                        <p>            Koniec Umowy: @Html.DisplayFor(modelItem => item.KoniecUmowy)</p>
+                        <p>            Opony: @Html.DisplayFor(modelItem => item.Opony)</p>
+                        <p>            AC: @Html.DisplayFor(modelItem => item.AC)</p>
+
+                        <p> @Html.DisplayFor(modelItem => item.Opis)</p>
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "DeleteRent", new { id = item.Id })
+                    </div>
+                </li>
+            </ul>
+            <div style="height: 20px;"> </div>
+        </div>
+        }
+    </div>
+
