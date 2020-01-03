@@ -174,6 +174,7 @@
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\RentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +200,27 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NotificationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotificationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NotificationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotificationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NotificationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotificationModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Powiadomienie.cs">
+      <DependentUpon>NotificationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Problem.cs">
+      <DependentUpon>NotificationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Samochod.cs">
       <DependentUpon>CarModel.tt</DependentUpon>
     </Compile>
@@ -239,6 +261,16 @@
       <DependentUpon>CarModel.edmx</DependentUpon>
       <LastGenOutput>CarModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\NotificationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NotificationModel.edmx</DependentUpon>
+      <LastGenOutput>NotificationModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NotificationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NotificationModel.edmx</DependentUpon>
+      <LastGenOutput>NotificationModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\UserManager.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UserManager.edmx</DependentUpon>
@@ -264,6 +296,13 @@
     </EntityDeploy>
     <Content Include="Models\CarModel.edmx.diagram">
       <DependentUpon>CarModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\NotificationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NotificationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NotificationModel.edmx.diagram">
+      <DependentUpon>NotificationModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -323,6 +362,10 @@
     <Content Include="Views\Rent\Index.cshtml" />
     <Content Include="Views\Rent\CreateRent.cshtml" />
     <Content Include="Views\Rent\DeleteRent.cshtml" />
+    <Content Include="Views\Message\Delete.cshtml" />
+    <Content Include="Views\Message\Details.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\CreateProblem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
