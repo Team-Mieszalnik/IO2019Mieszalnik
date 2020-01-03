@@ -46,10 +46,20 @@ textarea {
 
 .rent-single {
     padding-top: 2rem !important;
+    vertical-align: central;
+    margin-top: 18px;
 }
 
 .rent-offer {
-    background-color: E0E0E0;
+    background-color: #E8E8E8;
+}
+.offer-item {
+    width: 40%;
+}
+.offer-image {
+    height: 400px;
+    margin-top: 8px;
+    margin-left: 18px;
 }
 
 /*.lead {
