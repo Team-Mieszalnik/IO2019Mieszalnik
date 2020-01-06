@@ -6,74 +6,82 @@
 
 <h2>Szczegoly samochodu</h2>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Marka)
-        </dt>
+<div class="rent-single">
+    <ul class="list-inline  rent-offer">
+        <li class="offer-item py-5 bg-image-full offer-image-details" style="background-image: url('images/@Html.DisplayFor(model => model.Zdjecie)');" />
+        <li class="offer-item py-5">
+            <div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.Marka)
-        </dd>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Marka)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Marka)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Model)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Model)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Rok)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Model)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Rok.Year)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Rok)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LimitKilometrow)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Rok.Year)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LimitKilometrow)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LimitKilometrow)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Opony)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.LimitKilometrow)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Opony)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Opony)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AC)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Opony)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.AC)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AC)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cena)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.AC)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cena)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cena)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Opis)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cena)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Opis)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Opis)
+                    </dt>
 
-    </dl>
+                    <dd>
+                        @Html.DisplayFor(model => model.Opis)
+                    </dd>
+
+                </dl>
+
+            </div>
+        </li>
+    </ul>
 </div>
 <p>
     @Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = Model.Id }, null) |
