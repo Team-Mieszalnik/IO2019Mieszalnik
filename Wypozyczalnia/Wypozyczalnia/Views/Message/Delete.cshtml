@@ -4,19 +4,18 @@
     ViewBag.Title = "Delete";
 }
 
-    <h2>Usun powiadomienie @Html.DisplayNameFor(model => model.Tytul)</h2>
+    <h2>Usun powiadomienie @Html.DisplayFor(model => model.Tytul)</h2>
 
 <h3>Jestes pewien ze chcesz usunac to powiadomienie?</h3>
 <div>
-    <h4>Powiadomienie</h4>
     <hr />
    
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Usun" class="btn btn-default" /> |
-            @Html.ActionLink("Wroc", "Index")
+            @Html.ActionLink("Wroc", "Index", null , new { @class = "btn btn-info" })
+            <input type="submit" value="Usun" class="btn btn-danger" />
         </div>
     }
 </div>

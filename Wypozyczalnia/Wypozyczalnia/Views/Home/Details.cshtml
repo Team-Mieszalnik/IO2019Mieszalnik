@@ -78,8 +78,9 @@
 
 
     </section>
-</div>
+</div >
 <p>
-    @Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = Model.Id }, null) |
-    @Html.ActionLink("Wroc", "Index")
+
+    @Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = Model.Id }, new { @class = "btn btn-success" } )
+    @Html.ActionLink("Wroc", "Index", null , new { @class = "btn btn-info" })
 </p>
