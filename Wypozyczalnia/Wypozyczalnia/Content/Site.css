@@ -40,7 +40,8 @@ textarea {
 }
 
 .rent-whole {
-    /*padding-top: 1rem !important;*/
+    padding-top: 1rem !important;
+    margin-top: 1rem !important;
     padding-bottom: 2rem !important;
 }
 
@@ -52,18 +53,40 @@ textarea {
 
 .rent-offer {
     background-color: #E8E8E8;
+    margin-bottom: 0px;
+    padding: 10px;
 }
 .offer-item {
     width: 40%;
+    vertical-align: top;
+    text-align:center;
 }
 .offer-image {
-    height: 400px;
-    margin-top: 8px;
+    min-height: 250px ;
     margin-left: 18px;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.offer-image-details {
+    height: 200px;
+}
+.text-white {
+    color: white;
+}
+.offer-description-name {
+    font-size: 36px;
+    margin: 0px;
+}
+
+.offer-description {
+    margin-bottom: 5px;
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
 }
 
 /*.lead {
     font-size: 1.25rem;
     font-weight: 300;
 }*/
-

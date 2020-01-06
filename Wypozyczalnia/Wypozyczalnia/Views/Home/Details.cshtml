@@ -1,90 +1,71 @@
 ﻿@model Wypozyczalnia.Models.Samochod
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Szczegoly";
 }
 
-<h2>Details</h2>
+<h2>Szczegoly samochodu</h2>
 
-<div>
-    <h4>Samochod</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Marka)
-        </dt>
+<div class="rent-whole">
+    <ul class="list-inline rent-offer">
+        <li class="offer-item offer-image" style="background-image: url('../../images/@Html.DisplayFor(model => model.Zdjecie)');" />
+        <li class="offer-item ">
+            <dl class="dl-horizontal">
+                <dt class="offer-description-name">
+                    @Html.DisplayFor(model => model.Marka)
+                </dt>
+                <dd class="offer-description-name">
+                    @Html.DisplayFor(model => model.Model)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Marka)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Rok)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Rok.Year)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Model)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LimitKilometrow)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Rok)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LimitKilometrow)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Rok)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Opony)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LimitKilometrow)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Opony)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LimitKilometrow)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AC)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Opony)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AC)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Opony)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cena)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AC)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cena)
+                </dd>
+            </dl>
+            <p style="margin-bottom:5px;">
+                @Html.DisplayFor(model => model.Opis)
+            </p>
+            <p>
 
-        <dd>
-            @Html.DisplayFor(model => model.AC)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Zdjecie)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Zdjecie)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cena)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cena)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Opis)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Opis)
-        </dd>
-
-    </dl>
+                @Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = Model.Id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Wroc", "Index", null, new { @class = "btn btn-info" })
+            </p>
+        </li>
+    </ul>
 </div>
-<p>
-    @Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = Model.Id }, null) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -5,34 +5,48 @@
 }
 
 
-    <div class="btn-group-vertical rent-whole">
+    <div class="rent-whole">
         @foreach (var item in Model)
         {
         <div class="rent-single">
-            <ul class="list-inline  rent-offer">
-                <li class="offer-item py-5 bg-image-full offer-image" style="background-image: url('images/@Html.DisplayFor(modelItem => item.Zdjecie)');" />
-                <li class="offer-item py-5">
-                    <div class="container">
+            <ul class="list-inline rent-offer">
+                <li class="offer-item offer-image" style="background-image:url('images/@Html.DisplayFor(modelItem => item.Zdjecie)');" />
+                <li class="offer-item">
+                    <dl class="dl-horizontal" style="margin-bottom: 10px">
 
-                        <h1>@Html.DisplayFor(modelItem => item.Marka) @Html.DisplayFor(modelItem => item.Model)</h1>
-                        <p>            Rocznik: @Html.DisplayFor(modelItem => item.Rok.Year)</p>
-                        <p>            Cena: @Html.DisplayFor(modelItem => item.Cena) </p>
-                        <p>            Limit kilometrow: @Html.DisplayFor(modelItem => item.LimitKilometrow)</p>
-                        <p>            Numer Rejestracyjny: @Html.DisplayFor(modelItem => item.NrRejestracyjny)</p>
-                        <p>            Poczatek Umowy: @Html.DisplayFor(modelItem => item.PoczatekUmowy)</p>
-                        <p>            Koniec Umowy: @Html.DisplayFor(modelItem => item.KoniecUmowy)</p>
-                        <p>            Opony: @Html.DisplayFor(modelItem => item.Opony)</p>
-                        <p>            AC: @Html.DisplayFor(modelItem => item.AC)</p>
-
-                        <p> @Html.DisplayFor(modelItem => item.Opis)</p>
-
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "DeleteRent", new { id = item.Id })
-                    </div>
+                        <dt class="offer-description-name">
+                            @Html.DisplayFor(modelItem => item.Marka)
+                        </dt>
+                        <dd class="offer-description-name">
+                            @Html.DisplayFor(modelItem => item.Model)
+                        </dd>
+                        <dt>            Rocznik </dt>
+                        <dd>@Html.DisplayFor(modelItem => item.Rok.Year)</dd>
+                        <dt>            Cena </dt>
+                        <dd>@Html.DisplayFor(modelItem => item.Cena)</dd>
+                        <dt>            Limit kilometrow </dt>
+                        <dd>@Html.DisplayFor(modelItem => item.LimitKilometrow)</dd>
+                        <dt>            Numer Rejestracyjny </dt>
+                        <dd>@Html.DisplayFor(modelItem => item.NrRejestracyjny)</dd>
+                        <dt>            Poczatek Umowy </dt>
+                        <dd>@Html.DisplayFor(modelItem => item.PoczatekUmowy)</dd>
+                        <dt>            Koniec Umowy </dt>
+                        <dd>@Html.DisplayFor(modelItem => item.KoniecUmowy)</dd>
+                        <dt>            Opony </dt>
+                        <dd>@Html.DisplayFor(modelItem => item.Opony)</dd>
+                        <dt>            AC </dt>
+                        <dd>@Html.DisplayFor(modelItem => item.AC)</dd>
+                    </dl>
+                    <p class="offer-description">
+                        @Html.DisplayFor(modelItem => item.Opis)
+                    </p>
+                    <p style="margin-bottom:0px;">
+                        @Html.ActionLink("Edytuj szczegoly", "Edit", new { id = item.Id }, new { @class = "btn btn-default" })
+                        @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                        @Html.ActionLink("Zakoncz wynajem", "DeleteRent", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </p>
                 </li>
             </ul>
-            <div style="height: 20px;"> </div>
         </div>
         }
     </div>

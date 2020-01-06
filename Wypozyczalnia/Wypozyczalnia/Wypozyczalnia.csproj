@@ -171,7 +171,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -181,24 +180,12 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetUsers.cs">
-      <DependentUpon>UserManager.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CarModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CarModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CarModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarModel.edmx</DependentUpon>
+      <DependentUpon>NotificationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IndywidualnaOferta.cs">
+      <DependentUpon>NotificationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NotificationModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -210,10 +197,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NotificationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NotificationModel.Designer.cs">
+    <Compile Include="Models\DatabaseModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NotificationModel.edmx</DependentUpon>
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Powiadomienie.cs">
       <DependentUpon>NotificationModel.tt</DependentUpon>
@@ -222,22 +209,7 @@
       <DependentUpon>NotificationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Samochod.cs">
-      <DependentUpon>CarModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserManager.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserManager.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserManager.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserManager.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserManager.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserManager.edmx</DependentUpon>
+      <DependentUpon>NotificationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -251,58 +223,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\CarModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CarModel.edmx</DependentUpon>
-      <LastGenOutput>CarModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\CarModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CarModel.edmx</DependentUpon>
-      <LastGenOutput>CarModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\NotificationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NotificationModel.edmx</DependentUpon>
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>NotificationModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\NotificationModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NotificationModel.edmx</DependentUpon>
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>NotificationModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\UserManager.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserManager.edmx</DependentUpon>
-      <LastGenOutput>UserManager.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\UserManager.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserManager.edmx</DependentUpon>
-      <LastGenOutput>UserManager.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\UserManager.edmx">
+    <EntityDeploy Include="Models\DatabaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserManager.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\UserManager.edmx.diagram">
-      <DependentUpon>UserManager.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\CarModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CarModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\CarModel.edmx.diagram">
-      <DependentUpon>CarModel.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\NotificationModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NotificationModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\NotificationModel.edmx.diagram">
-      <DependentUpon>NotificationModel.edmx</DependentUpon>
+    <Content Include="Models\DatabaseModel.edmx.diagram">
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -326,27 +264,16 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home1\About.cshtml" />
-    <Content Include="Views\Home1\Contact.cshtml" />
-    <Content Include="Views\Home1\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Admin\Delete.cshtml" />
@@ -366,6 +293,7 @@
     <Content Include="Views\Message\Details.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\CreateProblem.cshtml" />
+    <Content Include="Views\Message\CreateIndividualOffer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

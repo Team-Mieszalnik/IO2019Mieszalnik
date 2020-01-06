@@ -11,14 +11,20 @@ namespace Wypozyczalnia.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Problem
     {
         public int Id { get; set; }
+        [Required, StringLength(30)]
         public string Tytul { get; set; }
+        [Required, StringLength(400)]
         public string Opis { get; set; }
+        [StringLength(10)]
         public string NrRejestracyjny { get; set; }
         public Nullable<System.DateTime> Data { get; set; }
         public string UserId { get; set; }
+    
+        public virtual AspNetUsers AspNetUsers { get; set; }
     }
 }

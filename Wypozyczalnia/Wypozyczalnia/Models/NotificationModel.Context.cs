@@ -27,5 +27,8 @@ namespace Wypozyczalnia.Models
     
         public virtual DbSet<Powiadomienie> Powiadomienie { get; set; }
         public virtual DbSet<Problem> Problem { get; set; }
+        public virtual DbSet<IndywidualnaOferta> IndywidualnaOferta { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<Samochod> Samochod { get; set; }
     }
 }

@@ -25,9 +25,10 @@
                     @{
                         if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
                         {
-                            <li>@Html.ActionLink("Wypozyczenia", "Index", "Rent")</li>
-                            <li>@Html.ActionLink("Wiadomosci", "Index", "Message")</li>
+                            <li>@Html.ActionLink("Moje wypozyczenia", "Index", "Rent")</li>
+                            <li>@Html.ActionLink("Powiadomienia", "Index", "Message")</li>
                             <li>@Html.ActionLink("Masz problem?", "CreateProblem", "Message")</li>
+                            <li>@Html.ActionLink("Indywidualna oferta", "CreateIndividualOffer", "Message")</li>
                         }
 
                         if (System.Web.HttpContext.Current.User.IsInRole("Admin"))

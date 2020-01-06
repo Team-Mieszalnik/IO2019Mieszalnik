@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<Wypozyczalnia.Models.Powiadomienie>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Powiadominia";
 }
 
-<h2>Index</h2>
+<h2>Powiadominia </h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -29,8 +29,8 @@
             @Html.DisplayFor(modelItem => item.Data)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Szczegoly", "Details", new { id=item.Id }, new { @class = "btn btn-default" }) 
+            @Html.ActionLink("Usun", "Delete", new { id=item.Id }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

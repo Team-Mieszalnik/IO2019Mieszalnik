@@ -12,7 +12,7 @@ namespace Wypozyczalnia.Controllers
 {
     public class HomeController : Controller
     {
-        private Entities4 db = new Entities4();
+        private Entities5 db = new Entities5();
 
         //// GET: Home
         //public ActionResult Index()
