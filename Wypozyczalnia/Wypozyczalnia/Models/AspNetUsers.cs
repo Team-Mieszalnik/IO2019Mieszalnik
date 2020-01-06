@@ -14,6 +14,15 @@ namespace Wypozyczalnia.Models
     
     public partial class AspNetUsers
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AspNetUsers()
+        {
+            this.Samochod = new HashSet<Samochod>();
+            this.IndywidualnaOferta = new HashSet<IndywidualnaOferta>();
+            this.Powiadomienie = new HashSet<Powiadomienie>();
+            this.Problem = new HashSet<Problem>();
+        }
+    
         public string Id { get; set; }
         public string Email { get; set; }
         public bool EmailConfirmed { get; set; }
@@ -26,5 +35,14 @@ namespace Wypozyczalnia.Models
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Samochod> Samochod { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<IndywidualnaOferta> IndywidualnaOferta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Powiadomienie> Powiadomienie { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Problem> Problem { get; set; }
     }
 }

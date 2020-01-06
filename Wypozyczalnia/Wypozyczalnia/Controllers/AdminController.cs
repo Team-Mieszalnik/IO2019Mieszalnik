@@ -13,7 +13,7 @@ namespace Wypozyczalnia.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-        private Entities db = new Entities();
+        private Entities5 db = new Entities5();
 
         // GET: Admin
         public ActionResult Index()
