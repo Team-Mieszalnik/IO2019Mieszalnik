@@ -20,5 +20,7 @@ namespace Wypozyczalnia.Models
         public string NrRejestracyjny { get; set; }
         public Nullable<System.DateTime> Data { get; set; }
         public string UserId { get; set; }
+    
+        public virtual AspNetUsers AspNetUsers { get; set; }
     }
 }

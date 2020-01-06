@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IndywidualnaOferta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Rok" Type="datetime" Nullable="false" />
+          <Property Name="LimitKilometrow" Type="int" />
+          <Property Name="Opony" Type="nchar" MaxLength="30" />
+          <Property Name="AC" Type="bit" />
+          <Property Name="Opis" Type="nchar" MaxLength="100" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Powiadomienie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tytul" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Opis" Type="nchar" MaxLength="200" Nullable="false" />
+          <Property Name="NrRejestracyjny" Type="nchar" MaxLength="10" />
+          <Property Name="Data" Type="date" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Problem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tytul" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Opis" Type="nchar" MaxLength="200" Nullable="false" />
+          <Property Name="NrRejestracyjny" Type="nchar" MaxLength="10" />
+          <Property Name="Data" Type="date" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Samochod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Rok" Type="datetime" Nullable="false" />
+          <Property Name="LimitKilometrow" Type="int" />
+          <Property Name="Opony" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="AC" Type="bit" Nullable="false" />
+          <Property Name="NrRejestracyjny" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Zdjecie" Type="nchar" MaxLength="30" />
+          <Property Name="Cena" Type="money" Nullable="false" />
+          <Property Name="PoczatekUmowy" Type="datetime" />
+          <Property Name="KoniecUmowy" Type="datetime" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="Opis" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_dbo_Samochod_dbo_Samochod_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Samochod" Type="Self.Samochod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Samochod">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dboIndywidualnaOferta_dbo_IndywidualnaOferta_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="IndywidualnaOferta" Type="Self.IndywidualnaOferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndywidualnaOferta">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dboPowiadomienie_dbo_Powiadomienie_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Powiadomienie" Type="Self.Powiadomienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Powiadomienie">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dboProblem_dbo_Problem_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Problem" Type="Self.Problem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Problem">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Model2StoreContainer">
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IndywidualnaOferta" EntityType="Self.IndywidualnaOferta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Powiadomienie" EntityType="Self.Powiadomienie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Problem" EntityType="Self.Problem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Samochod" EntityType="Self.Samochod" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_Samochod_dbo_Samochod_UserId" Association="Self.FK_dbo_Samochod_dbo_Samochod_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Samochod" EntitySet="Samochod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dboIndywidualnaOferta_dbo_IndywidualnaOferta_UserId" Association="Self.FK_dboIndywidualnaOferta_dbo_IndywidualnaOferta_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="IndywidualnaOferta" EntitySet="IndywidualnaOferta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dboPowiadomienie_dbo_Powiadomienie_UserId" Association="Self.FK_dboPowiadomienie_dbo_Powiadomienie_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Powiadomienie" EntitySet="Powiadomienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dboProblem_dbo_Problem_UserId" Association="Self.FK_dboProblem_dbo_Problem_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Problem" EntitySet="Problem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Powiadomienie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tytul" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NrRejestracyjny" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Model2.FK_dboPowiadomienie_dbo_Powiadomienie_UserId" FromRole="Powiadomienie" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="Problem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tytul" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NrRejestracyjny" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Model2.FK_dboProblem_dbo_Problem_UserId" FromRole="Problem" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityContainer Name="Entities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Powiadomienie" EntityType="Self.Powiadomienie" />
+          <EntitySet Name="Problem" EntityType="Self.Problem" />
+          <EntitySet Name="IndywidualnaOferta" EntityType="Model2.IndywidualnaOferta" />
+          <EntitySet Name="AspNetUsers" EntityType="Model2.AspNetUsers" />
+          <EntitySet Name="Samochod" EntityType="Model2.Samochod" />
+          <AssociationSet Name="FK_dbo_Samochod_dbo_Samochod_UserId" Association="Model2.FK_dbo_Samochod_dbo_Samochod_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Samochod" EntitySet="Samochod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dboIndywidualnaOferta_dbo_IndywidualnaOferta_UserId" Association="Model2.FK_dboIndywidualnaOferta_dbo_IndywidualnaOferta_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="IndywidualnaOferta" EntitySet="IndywidualnaOferta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dboPowiadomienie_dbo_Powiadomienie_UserId" Association="Model2.FK_dboPowiadomienie_dbo_Powiadomienie_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Powiadomienie" EntitySet="Powiadomienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dboProblem_dbo_Problem_UserId" Association="Model2.FK_dboProblem_dbo_Problem_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Problem" EntitySet="Problem" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="IndywidualnaOferta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Rok" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LimitKilometrow" Type="Int32" />
+          <Property Name="Opony" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="AC" Type="Boolean" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Model2.FK_dboIndywidualnaOferta_dbo_IndywidualnaOferta_UserId" FromRole="IndywidualnaOferta" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Samochod" Relationship="Model2.FK_dbo_Samochod_dbo_Samochod_UserId" FromRole="AspNetUsers" ToRole="Samochod" />
+          <NavigationProperty Name="IndywidualnaOferta" Relationship="Model2.FK_dboIndywidualnaOferta_dbo_IndywidualnaOferta_UserId" FromRole="AspNetUsers" ToRole="IndywidualnaOferta" />
+          <NavigationProperty Name="Powiadomienie" Relationship="Model2.FK_dboPowiadomienie_dbo_Powiadomienie_UserId" FromRole="AspNetUsers" ToRole="Powiadomienie" />
+          <NavigationProperty Name="Problem" Relationship="Model2.FK_dboProblem_dbo_Problem_UserId" FromRole="AspNetUsers" ToRole="Problem" />
+        </EntityType>
+        <EntityType Name="Samochod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Rok" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LimitKilometrow" Type="Int32" />
+          <Property Name="Opony" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="AC" Type="Boolean" Nullable="false" />
+          <Property Name="NrRejestracyjny" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Zdjecie" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Cena" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PoczatekUmowy" Type="DateTime" Precision="3" />
+          <Property Name="KoniecUmowy" Type="DateTime" Precision="3" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Model2.FK_dbo_Samochod_dbo_Samochod_UserId" FromRole="Samochod" ToRole="AspNetUsers" />
+        </EntityType>
+        <Association Name="FK_dbo_Samochod_dbo_Samochod_UserId">
+          <End Type="Model2.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Model2.Samochod" Role="Samochod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Samochod">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dboIndywidualnaOferta_dbo_IndywidualnaOferta_UserId">
+          <End Type="Model2.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+          <End Type="Model2.IndywidualnaOferta" Role="IndywidualnaOferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IndywidualnaOferta">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dboPowiadomienie_dbo_Powiadomienie_UserId">
+          <End Type="Model2.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+          <End Type="Model2.Powiadomienie" Role="Powiadomienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Powiadomienie">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dboProblem_dbo_Problem_UserId">
+          <End Type="Model2.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+          <End Type="Model2.Problem" Role="Problem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Problem">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model2StoreContainer" CdmEntityContainer="Entities5">
+          <EntitySetMapping Name="Powiadomienie">
+            <EntityTypeMapping TypeName="Model2.Powiadomienie">
+              <MappingFragment StoreEntitySet="Powiadomienie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="NrRejestracyjny" ColumnName="NrRejestracyjny" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Problem">
+            <EntityTypeMapping TypeName="Model2.Problem">
+              <MappingFragment StoreEntitySet="Problem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="NrRejestracyjny" ColumnName="NrRejestracyjny" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndywidualnaOferta">
+            <EntityTypeMapping TypeName="Model2.IndywidualnaOferta">
+              <MappingFragment StoreEntitySet="IndywidualnaOferta">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="AC" ColumnName="AC" />
+                <ScalarProperty Name="Opony" ColumnName="Opony" />
+                <ScalarProperty Name="LimitKilometrow" ColumnName="LimitKilometrow" />
+                <ScalarProperty Name="Rok" ColumnName="Rok" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="Model2.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Samochod">
+            <EntityTypeMapping TypeName="Model2.Samochod">
+              <MappingFragment StoreEntitySet="Samochod">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="KoniecUmowy" ColumnName="KoniecUmowy" />
+                <ScalarProperty Name="PoczatekUmowy" ColumnName="PoczatekUmowy" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Zdjecie" ColumnName="Zdjecie" />
+                <ScalarProperty Name="NrRejestracyjny" ColumnName="NrRejestracyjny" />
+                <ScalarProperty Name="AC" ColumnName="AC" />
+                <ScalarProperty Name="Opony" ColumnName="Opony" />
+                <ScalarProperty Name="LimitKilometrow" ColumnName="LimitKilometrow" />
+                <ScalarProperty Name="Rok" ColumnName="Rok" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

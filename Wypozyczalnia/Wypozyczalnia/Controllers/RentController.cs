@@ -14,7 +14,7 @@ namespace Wypozyczalnia.Controllers
     [Authorize]
     public class RentController : Controller
     {
-        private Entities4 db = new Entities4();
+        private Entities5 db = new Entities5();
 
         // GET: Rent
         public ActionResult Index()

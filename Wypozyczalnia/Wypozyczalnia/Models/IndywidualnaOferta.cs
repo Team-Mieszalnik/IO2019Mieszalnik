@@ -27,5 +27,7 @@ namespace Wypozyczalnia.Models
         public Nullable<bool> AC { get; set; }
         public string Opis { get; set; }
         public string UserId { get; set; }
+    
+        public virtual AspNetUsers AspNetUsers { get; set; }
     }
 }
