@@ -256,5 +256,5 @@ paket-files/
 __pycache__/
 *.pyc
 
-*.mdf
-*.ldf
+# *.mdf
+# *.ldf
