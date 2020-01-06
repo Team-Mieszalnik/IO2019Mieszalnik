@@ -88,7 +88,8 @@ namespace Wypozyczalnia.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateRent([Bind(Include = "Id,Marka,Model,Rok,LimitKilometrow,Opony,AC,NrRejestracyjny,Zdjecie,Cena,PoczatekUmowy,KoniecUmowy,UserId,Opis")] Samochod samochod)
         {
-            if (ModelState.IsValid)
+
+            if (ModelState.IsValid && samochod.KoniecUmowy > samochod.PoczatekUmowy)
             {
                 db.Entry(samochod).State = EntityState.Modified;
                 db.SaveChanges();

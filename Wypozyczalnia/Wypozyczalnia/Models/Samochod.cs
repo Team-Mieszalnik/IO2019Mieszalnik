@@ -20,6 +20,7 @@ namespace Wypozyczalnia.Models
         public string Model { get; set; }
         public System.DateTime Rok { get; set; }
         [Required]
+        [Range(0, 10000)]
         public Nullable<int> LimitKilometrow { get; set; }
         public string Opony { get; set; }
         public bool AC { get; set; }

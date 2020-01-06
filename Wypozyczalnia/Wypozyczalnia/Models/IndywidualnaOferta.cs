@@ -16,15 +16,18 @@ namespace Wypozyczalnia.Models
     public partial class IndywidualnaOferta
     {
         public int Id { get; set; }
-        [Required]
+        [Required, StringLength(30)]
         public string Marka { get; set; }
-        [Required]
+        [Required, StringLength(30)]
         public string Model { get; set; }
         [Required]
         public System.DateTime Rok { get; set; }
+        [Range(0,10000)]
         public Nullable<int> LimitKilometrow { get; set; }
+        [StringLength(30)]
         public string Opony { get; set; }
         public Nullable<bool> AC { get; set; }
+        [StringLength(100)]
         public string Opis { get; set; }
         public string UserId { get; set; }
     
