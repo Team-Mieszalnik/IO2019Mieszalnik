@@ -32,6 +32,7 @@ namespace Wypozyczalnia.Models
         [Required]
         public Nullable<System.DateTime> KoniecUmowy { get; set; }
         public string UserId { get; set; }
+        [StringLength(1000)]
         public string Opis { get; set; }
     
         public virtual AspNetUsers AspNetUsers { get; set; }
