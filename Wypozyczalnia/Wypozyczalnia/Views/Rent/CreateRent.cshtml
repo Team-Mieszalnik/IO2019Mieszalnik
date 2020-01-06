@@ -2,66 +2,77 @@
 @model Wypozyczalnia.Models.Samochod
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Szczegoly wynajmu";
 }
 
-<h2>Edit</h2>
+<h2>Szczegoly wynajmu</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Samochod</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.Id)
-    @Html.HiddenFor(model => model.Marka)
-    @Html.HiddenFor(model => model.Model)
-    @Html.HiddenFor(model => model.Rok)
-    @Html.HiddenFor(model => model.AC)
-    @Html.HiddenFor(model => model.NrRejestracyjny)
-    @Html.HiddenFor(model => model.Zdjecie)
-    @Html.HiddenFor(model => model.Cena)
-    @Html.HiddenFor(model => model.PoczatekUmowy)
-    @Html.HiddenFor(model => model.UserId)
-    @Html.HiddenFor(model => model.Opis)
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Marka)
+        @Html.HiddenFor(model => model.Model)
+        @Html.HiddenFor(model => model.Rok)
+        @Html.HiddenFor(model => model.AC)
+        @Html.HiddenFor(model => model.NrRejestracyjny)
+        @Html.HiddenFor(model => model.Zdjecie)
+        @Html.HiddenFor(model => model.Cena)
+        @Html.HiddenFor(model => model.PoczatekUmowy)
+        @Html.HiddenFor(model => model.UserId)
+        @Html.HiddenFor(model => model.Opis)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.LimitKilometrow, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.LimitKilometrow, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.LimitKilometrow, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.LimitKilometrow, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LimitKilometrow, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LimitKilometrow, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Opony, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Opony, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Opony, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KoniecUmowy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KoniecUmowy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.KoniecUmowy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Refcode">Refcode</label>
+            <div class="col-md-10">
+
+                <input class="form-control text-box single-line" value="">
+
+                <div class="text-danger">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Wynajmij" class="btn btn-default" />
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Opony, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Opony, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Opony, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.KoniecUmowy, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.KoniecUmowy, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.KoniecUmowy, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
-        </div>
-    </div>
-</div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Wroc", "Index", null , new { @class = "btn btn-info" })
 </div>
 
 @section Scripts {

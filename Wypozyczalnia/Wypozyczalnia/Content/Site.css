@@ -70,15 +70,14 @@ textarea {
 .offer-image-details {
     height: 200px;
 }
-
+.text-white {
+    color: white;
+}
 .offer-description-name {
     font-size: 36px;
     margin: 0px;
 }
-
-
 /*.lead {
     font-size: 1.25rem;
     font-weight: 300;
 }*/
-

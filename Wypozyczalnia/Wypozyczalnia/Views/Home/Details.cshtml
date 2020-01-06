@@ -1,7 +1,7 @@
 ﻿@model Wypozyczalnia.Models.Samochod
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Szczegoly";
 }
 
 <h2>Szczegoly samochodu</h2>
@@ -61,11 +61,11 @@
             <p style="margin-bottom:5px;">
                 @Html.DisplayFor(model => model.Opis)
             </p>
+            <p>
+
+                @Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = Model.Id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Wroc", "Index", null, new { @class = "btn btn-info" })
+            </p>
         </li>
     </ul>
 </div>
-
-<p>
-    @Html.ActionLink("Wynajmij", "CreateRent", "Rent", new { id = Model.Id }, null) |
-    @Html.ActionLink("Wroc", "Index")
-</p>

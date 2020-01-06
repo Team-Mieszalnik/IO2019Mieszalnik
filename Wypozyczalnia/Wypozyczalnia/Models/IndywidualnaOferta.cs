@@ -27,7 +27,7 @@ namespace Wypozyczalnia.Models
         [StringLength(30)]
         public string Opony { get; set; }
         public Nullable<bool> AC { get; set; }
-        [StringLength(100)]
+        [StringLength(400)]
         public string Opis { get; set; }
         public string UserId { get; set; }
     

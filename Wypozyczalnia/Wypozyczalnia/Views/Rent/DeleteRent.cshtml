@@ -1,7 +1,7 @@
 ﻿@model Wypozyczalnia.Models.Samochod
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Zakonczenie wynajmu";
 }
 
 <h2>Zakonczenie wynajmu</h2>
@@ -15,8 +15,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Zakoncz Wynajem" class="btn btn-default" /> |
-            @Html.ActionLink("Wroc", "Index")
+            <input type="submit" value="Zakoncz Wynajem" class="btn btn-danger" /> 
+            @Html.ActionLink("Wroc", "Index", null , new { @class = "btn btn-info" })
         </div>
     }
 </div>

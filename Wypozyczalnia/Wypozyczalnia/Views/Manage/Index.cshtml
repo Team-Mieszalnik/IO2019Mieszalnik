@@ -1,11 +1,12 @@
 ﻿@model Wypozyczalnia.Models.IndexViewModel
+@using Microsoft.AspNet.Identity
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Twoje Konto";
 }
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Change your account settings</h4>
+    <h4>Zarzadzaj swoim kontem</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>Password:</dt>
@@ -13,13 +14,17 @@
             [
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                @Html.ActionLink("Zmien haslo", "ChangePassword")
             }
             else
             {
                 @Html.ActionLink("Create", "SetPassword")
             }
             ]
-        </dd>        
+        </dd>
+        <dt>Refcode:</dt>
+        <dd>
+            @System.Web.HttpContext.Current.User.Identity.GetUserId().ToString()
+        </dd>
     </dl>
 </div>

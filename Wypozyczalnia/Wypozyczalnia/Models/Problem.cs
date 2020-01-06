@@ -18,7 +18,7 @@ namespace Wypozyczalnia.Models
         public int Id { get; set; }
         [Required, StringLength(30)]
         public string Tytul { get; set; }
-        [Required, StringLength(200)]
+        [Required, StringLength(400)]
         public string Opis { get; set; }
         [StringLength(10)]
         public string NrRejestracyjny { get; set; }
