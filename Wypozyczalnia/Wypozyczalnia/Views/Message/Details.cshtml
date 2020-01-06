@@ -1,8 +1,10 @@
 ﻿@model Wypozyczalnia.Models.Powiadomienie
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Szczegoly powiadomienia";
 }
+
+    <h2>Szczegoly powiadomienia</h2>
 
 <div>
     @*<h4>Powiadomienie</h4>*@
@@ -44,6 +46,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Wroc", "Index",  null , new { @class = "btn btn-info" })
+    @Html.ActionLink("Wroc", "Index", null, new { @class = "btn btn-info" })
     @Html.ActionLink("Usun", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
 </p>
