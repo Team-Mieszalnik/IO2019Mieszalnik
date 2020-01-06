@@ -105,5 +105,34 @@ namespace Wypozyczalnia.Controllers
 
             return View(problem);
         }
+
+
+
+        // GET: Rent/CreateProblem
+        public ActionResult CreateIndividualOffer()
+        {
+            IndywidualnaOferta indywidualnaOferta = new IndywidualnaOferta();
+
+            indywidualnaOferta.UserId = System.Web.HttpContext.Current.User.Identity.GetUserId().ToString();
+
+            return View(indywidualnaOferta);
+        }
+
+        // POST: Rent/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateIndividualOffer([Bind(Include = "Id,Marka,Model,Rok,LimitKilometrow,Opony,AC,Opis,UserId")] IndywidualnaOferta indywidualnaOferta)
+        {
+            if (ModelState.IsValid)
+            {
+                db.IndywidualnaOferta.Add(indywidualnaOferta);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(indywidualnaOferta);
+        }
     }
 }

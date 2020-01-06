@@ -199,6 +199,9 @@
       <DependentUpon>CarModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IndywidualnaOferta.cs">
+      <DependentUpon>NotificationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NotificationModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -366,6 +369,7 @@
     <Content Include="Views\Message\Details.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\CreateProblem.cshtml" />
+    <Content Include="Views\Message\CreateIndividualOffer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

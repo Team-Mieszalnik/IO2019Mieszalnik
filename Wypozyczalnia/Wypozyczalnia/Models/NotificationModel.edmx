@@ -4,7 +4,21 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IndywidualnaOferta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Rok" Type="datetime" Nullable="false" />
+          <Property Name="LimitKilometrow" Type="int" />
+          <Property Name="Opony" Type="nchar" MaxLength="30" />
+          <Property Name="AC" Type="bit" />
+          <Property Name="Opis" Type="nchar" MaxLength="100" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
         <EntityType Name="Powiadomienie">
           <Key>
             <PropertyRef Name="Id" />
@@ -28,11 +42,11 @@
           <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Model2StoreContainer">
+          <EntitySet Name="IndywidualnaOferta" EntityType="Self.IndywidualnaOferta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Powiadomienie" EntityType="Self.Powiadomienie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Problem" EntityType="Self.Problem" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -61,7 +75,22 @@
         <EntityContainer Name="Entities5" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Powiadomienie" EntityType="Self.Powiadomienie" />
           <EntitySet Name="Problem" EntityType="Self.Problem" />
+          <EntitySet Name="IndywidualnaOferta" EntityType="Model2.IndywidualnaOferta" />
         </EntityContainer>
+        <EntityType Name="IndywidualnaOferta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Rok" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LimitKilometrow" Type="Int32" />
+          <Property Name="Opony" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="AC" Type="Boolean" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -89,6 +118,21 @@
                 <ScalarProperty Name="NrRejestracyjny" ColumnName="NrRejestracyjny" />
                 <ScalarProperty Name="Data" ColumnName="Data" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndywidualnaOferta">
+            <EntityTypeMapping TypeName="Model2.IndywidualnaOferta">
+              <MappingFragment StoreEntitySet="IndywidualnaOferta">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="AC" ColumnName="AC" />
+                <ScalarProperty Name="Opony" ColumnName="Opony" />
+                <ScalarProperty Name="LimitKilometrow" ColumnName="LimitKilometrow" />
+                <ScalarProperty Name="Rok" ColumnName="Rok" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

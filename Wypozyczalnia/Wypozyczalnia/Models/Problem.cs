@@ -11,11 +11,14 @@ namespace Wypozyczalnia.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Problem
     {
         public int Id { get; set; }
+        [Required]
         public string Tytul { get; set; }
+        [Required]
         public string Opis { get; set; }
         public string NrRejestracyjny { get; set; }
         public Nullable<System.DateTime> Data { get; set; }
