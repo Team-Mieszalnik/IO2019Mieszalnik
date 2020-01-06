@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+    <h2>Szczegoly samochodu</h2>
 
 <div>
-    <h4>Samochod</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -31,7 +31,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Rok)
+            @Html.DisplayFor(model => model.Rok.Year)
         </dd>
 
         <dt>
@@ -64,14 +64,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.NrRejestracyjny)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Zdjecie)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Zdjecie)
         </dd>
 
         <dt>

@@ -26,9 +26,9 @@
 
                         <p> @Html.DisplayFor(modelItem => item.Opis)</p>
 
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "DeleteRent", new { id = item.Id })
+                        @Html.ActionLink("Edytuj szczegoly", "Edit", new { id = item.Id }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                        @Html.ActionLink("Zakoncz wynajem", "DeleteRent", new { id = item.Id })
                     </div>
                 </li>
             </ul>
