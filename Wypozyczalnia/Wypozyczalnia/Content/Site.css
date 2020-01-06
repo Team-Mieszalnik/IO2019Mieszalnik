@@ -64,7 +64,8 @@ textarea {
 .offer-image {
     min-height: 250px ;
     margin-left: 18px;
-    background-size:contain;
+    background-size:cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 .offer-image-details {
@@ -77,6 +78,14 @@ textarea {
     font-size: 36px;
     margin: 0px;
 }
+
+.offer-description {
+    margin-bottom: 5px;
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
+}
+
 /*.lead {
     font-size: 1.25rem;
     font-weight: 300;
