@@ -4,7 +4,25 @@ w tym pliku znajdziesz swój przydział obowiązków:
 
 1. Napisać dokumentację do AccountController.cs (popatrz na inne, np. AdminController)
 2. Nagrać film ilustrujący użycie strony:
-	wykonać wszystkie czynności znajdujące się w pliku testy.xlsx
-	dane przykładowego konta z powiadomieniami: 
-		Madzia@gmail.com
-		hasło:  AHfi4`GI04-DDFrF356-`fIk35
+	wykonać wszystkie czynności znajdujące się w pliku testy.xlsx:
+		- lista samochodów
+		- szczegóły samochodów
+		- próba wynajmu bez zalogowania
+		- rejestacja
+		- logowanie:
+			dane przykładowego konta z powiadomieniami: 
+			Madzia@gmail.com
+			hasło:  AHfi4`GI04-DDFrF356-`fIk35
+		- powiadomienia
+		- szczegóły powiadomień
+		- edytuj wynajem samochodu
+		- wynajmij nowy samochód
+		- usuń wynajęty samochód
+		- sprawdź powiadomienia i ich szczegóły
+		- usun jakieś powiadomienie
+		- stwórz indywidualną oferte
+		- stwórz problem
+		- popełnij błąd
+		- zmień hasło
+		- i coś tam jeszcze poklikaj
+		
