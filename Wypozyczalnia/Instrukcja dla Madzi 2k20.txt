@@ -1,0 +1,10 @@
+Witaj Magdaleno,
+
+w tym pliku znajdziesz swój przydział obowiązków:
+
+1. Napisać dokumentację do AccountController.cs (popatrz na inne, np. AdminController)
+2. Nagrać film ilustrujący użycie strony:
+	wykonać wszystkie czynności znajdujące się w pliku testy.xlsx
+	dane przykładowego konta z powiadomieniami: 
+		Madzia@gmail.com
+		hasło:  AHfi4`GI04-DDFrF356
