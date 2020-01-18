@@ -12,7 +12,7 @@ using Wypozyczalnia.Models;
 namespace Wypozyczalnia.Controllers
 {
     /*! 
-     * \brief Kontroler wiadomości
+     * \brief Kontroler wiadomosci - powiadomien, problemow i indywidualnych ofert
      * 
      * Kontroler wiadomości połączony z widokiem Powiadomienie
      */
