@@ -11,21 +11,39 @@ using Wypozyczalnia.Models;
 namespace Wypozyczalnia.Controllers
 {
     [Authorize]
+
+
+    /**
+     * @brief  klasa odpowiedzialna za zarządzanie kontem użytkownika
+     */
     public class ManageController : Controller
     {
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        /**
+        * @brief konstruktor bezargumentowy
+        */
         public ManageController()
         {
         }
 
+        /**
+        * @brief konstruktor przyjmujący UserManager oraz SignInManager
+        * 
+        * @param userManager menedżer użytkownika
+        * @param singInManager menedżer logowania
+        */
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
 
+        /**
+        * @brief menedżer logowania
+        */
         public ApplicationSignInManager SignInManager
         {
             get
@@ -38,6 +56,9 @@ namespace Wypozyczalnia.Controllers
             }
         }
 
+        /**
+        * @brief menedżer konta użytkownika
+        */
         public ApplicationUserManager UserManager
         {
             get
@@ -50,6 +71,12 @@ namespace Wypozyczalnia.Controllers
             }
         }
 
+        /**
+        * @brief metoda zarządza zmianami na koncie i zwraca wiadomość
+        * @param message wiadomość co uległo zmianie
+        * 
+        * @return metoda zwraca widok
+        */
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -75,6 +102,11 @@ namespace Wypozyczalnia.Controllers
             return View(model);
         }
 
+        /**
+        * @brief metoda usuwa konto użytkownika
+        * 
+        * @return metoda zwraca przekierowanie do zarządzania
+        */
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]
@@ -99,6 +131,12 @@ namespace Wypozyczalnia.Controllers
             return RedirectToAction("ManageLogins", new { Message = message });
         }
 
+        /**
+        * @brief metoda przypisuje użytkownikowi numer telefonu
+        * 
+        * @return metoda zwraca widok klasy ActionResult
+        */
+        
         //
         // GET: /Manage/AddPhoneNumber
         public ActionResult AddPhoneNumber()
@@ -106,6 +144,12 @@ namespace Wypozyczalnia.Controllers
             return View();
         }
 
+        /**
+        * @brief metoda przypisuje użytkownikowi numer telefonu
+        * @param model reprezentuje odpowiedni model dodania numeru
+        * 
+        * @return zwraca widok lub przekierowanie do weryfikacji numeru telefonu
+        */
         //
         // POST: /Manage/AddPhoneNumber
         [HttpPost]
@@ -130,6 +174,11 @@ namespace Wypozyczalnia.Controllers
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
 
+        /**
+        * @brief metoda włączająca weryfikację dwuetapową
+        * 
+        * @return metoda zwraca przekierowanie do zarządzania
+        */
         //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
@@ -145,6 +194,11 @@ namespace Wypozyczalnia.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
+        /**
+        * @brief metoda wyłączająca weryfikację dwuetapową
+        * 
+        * @return metoda zwraca przekierowanie do zarządzania
+        */
         //
         // POST: /Manage/DisableTwoFactorAuthentication
         [HttpPost]
@@ -160,6 +214,11 @@ namespace Wypozyczalnia.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
+        /**
+        * @brief metoda weryfikuje numer telefonu
+        * @param phoneNumber weryfikowany numer
+        * @return metoda zwraca widok z błędem lub poprawnym numerem
+        */
         //
         // GET: /Manage/VerifyPhoneNumber
         public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
@@ -169,6 +228,12 @@ namespace Wypozyczalnia.Controllers
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
 
+        /**
+        * @brief metoda weryfikuje numer telefonu
+        * @param model model do weryfikacji numeru
+        * 
+        * @return zwraca widok lub przekierowanie do udanego dodania numeru
+        */
         //
         // POST: /Manage/VerifyPhoneNumber
         [HttpPost]
@@ -194,6 +259,10 @@ namespace Wypozyczalnia.Controllers
             return View(model);
         }
 
+        /**
+        * @brief metoda usuwa numer telefonu
+        * @return metoda zwraca przekierowanie do błędu usunięcia lub do udanego dodania 
+        */
         //
         // POST: /Manage/RemovePhoneNumber
         [HttpPost]
@@ -213,6 +282,10 @@ namespace Wypozyczalnia.Controllers
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
 
+        /**
+        * @brief metoda zmienia hasło
+        * @return metoda zwraca widok
+        */
         //
         // GET: /Manage/ChangePassword
         public ActionResult ChangePassword()
@@ -220,6 +293,11 @@ namespace Wypozyczalnia.Controllers
             return View();
         }
 
+        /**
+        * @brief metoda zmienia hasło
+        * @param model do zmiany hasła
+        * @return zwraca widok lubprzekierowanie do udanej zmiany hasła
+        */
         //
         // POST: /Manage/ChangePassword
         [HttpPost]
@@ -244,6 +322,10 @@ namespace Wypozyczalnia.Controllers
             return View(model);
         }
 
+        /**
+        * @brief metoda ustawia hasło
+        * @return metoda zwraca widok
+        */
         //
         // GET: /Manage/SetPassword
         public ActionResult SetPassword()
@@ -251,6 +333,11 @@ namespace Wypozyczalnia.Controllers
             return View();
         }
 
+        /**
+        * @brief metoda ustawia hasło
+        * @param model model do zmiany hasła
+        * @return zwraca przekierowanie do udanego ustawienia hasła lub widok
+        */
         //
         // POST: /Manage/SetPassword
         [HttpPost]
@@ -276,6 +363,11 @@ namespace Wypozyczalnia.Controllers
             return View(model);
         }
 
+        /**
+        * @brief metoda zarządza loginem
+        * @param wiadomość z systemu
+        * @return metoda zwraca widok z błędem lub z odpowiednimi loginami
+        */
         //
         // GET: /Manage/ManageLogins
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
@@ -299,6 +391,11 @@ namespace Wypozyczalnia.Controllers
             });
         }
 
+
+        /**
+        * @brief metoda łączy login użytkownikiem
+        * @param provider odpowiedni login
+        */
         //
         // POST: /Manage/LinkLogin
         [HttpPost]
@@ -309,6 +406,10 @@ namespace Wypozyczalnia.Controllers
             return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
         }
 
+        /**
+        * @brief wywołanie zwrotne łączenia loginu
+        * @return zwraca przekierowanie do zarządzania
+        */
         //
         // GET: /Manage/LinkLoginCallback
         public async Task<ActionResult> LinkLoginCallback()
@@ -322,6 +423,7 @@ namespace Wypozyczalnia.Controllers
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
 
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && _userManager != null)
@@ -333,7 +435,8 @@ namespace Wypozyczalnia.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
+
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
