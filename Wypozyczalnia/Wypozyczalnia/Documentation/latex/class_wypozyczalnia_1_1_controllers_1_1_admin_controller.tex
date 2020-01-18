@@ -1,0 +1,171 @@
+\hypertarget{class_wypozyczalnia_1_1_controllers_1_1_admin_controller}{}\doxysection{Wypozyczalnia.\+Controllers.\+Admin\+Controller Class Reference}
+\label{class_wypozyczalnia_1_1_controllers_1_1_admin_controller}\index{Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}}
+
+
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller}{Admin\+Controller}} to kontroler administratora, pozwala na moderowanie użytkownikami strony ~\newline
+  
+
+
+Inheritance diagram for Wypozyczalnia.\+Controllers.\+Admin\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wypozyczalnia_1_1_controllers_1_1_admin_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a65ac9dda78416a65fbf2d289fd9c8d2e}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwraca widok z listą urzytkowników. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a36560648719a252a04d051ef59342424}{Details}} (string id)
+\begin{DoxyCompactList}\small\item\em Metoda zwraca widok ze szczegółami użytkownika z pasującym ID. Może zwrócić informacje o braku takiego użytkownika w formie Http\+Not\+Found(). \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a7afe758ad608c5d93b7fff424271e582}{Edit}} (string id)
+\begin{DoxyCompactList}\small\item\em Metoda szuka użytkownika o podanym ID. Może zwrócić informacje o braku takiego użytkownika w formie Http\+Not\+Found(). \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a2c28cded420f7073544621dff07c714b}{Edit}} (\mbox{[}Bind(Include=\char`\"{}Id,Email,Email\+Confirmed,Password\+Hash,Security\+Stamp,Phone\+Number,Phone\+Number\+Confirmed,Two\+Factor\+Enabled,Lockout\+End\+Date\+Utc,Lockout\+Enabled,Access\+Failed\+Count,User\+Name\char`\"{})\mbox{]} Asp\+Net\+Users asp\+Net\+Users)
+\begin{DoxyCompactList}\small\item\em Metoda modyfikuje modyfikuje podanego użytkownika i zapisuje zmiany w bazie danych. Zwraca widok z listą użytkowników. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_ab797a702eb88be9e2a8bae86d0e5d4b1}{Delete}} (string id)
+\begin{DoxyCompactList}\small\item\em Metoda szuka użytkownika o podanym ID. Może zwrócić informacje o braku takiego użytkownika w formie Http\+Not\+Found(). \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a57f0e188797c9cd185ffc267761f2e66}{Delete\+Confirmed}} (string id)
+\begin{DoxyCompactList}\small\item\em Metoda usuwa użytkownika o podanym ID. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_ade0900876a6ca48b5f677801d249bdb2}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Metoda zamyka połączenie z bazą danych ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_admin_controller}{Admin\+Controller}} to kontroler administratora, pozwala na moderowanie użytkownikami strony ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_ab797a702eb88be9e2a8bae86d0e5d4b1}\label{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_ab797a702eb88be9e2a8bae86d0e5d4b1}} 
+\index{Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}!Delete@{Delete}}
+\index{Delete@{Delete}!Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Admin\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Metoda szuka użytkownika o podanym ID. Może zwrócić informacje o braku takiego użytkownika w formie Http\+Not\+Found(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Jest to id identyfikujące użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a57f0e188797c9cd185ffc267761f2e66}\label{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a57f0e188797c9cd185ffc267761f2e66}} 
+\index{Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}!DeleteConfirmed@{DeleteConfirmed}}
+\index{DeleteConfirmed@{DeleteConfirmed}!Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{DeleteConfirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Admin\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Metoda usuwa użytkownika o podanym ID. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Jest to id identyfikujące użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a36560648719a252a04d051ef59342424}\label{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a36560648719a252a04d051ef59342424}} 
+\index{Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}!Details@{Details}}
+\index{Details@{Details}!Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Admin\+Controller.\+Details (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Metoda zwraca widok ze szczegółami użytkownika z pasującym ID. Może zwrócić informacje o braku takiego użytkownika w formie Http\+Not\+Found(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Jest to id identyfikujące użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_ade0900876a6ca48b5f677801d249bdb2}\label{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_ade0900876a6ca48b5f677801d249bdb2}} 
+\index{Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Wypozyczalnia.\+Controllers.\+Admin\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Metoda zamyka połączenie z bazą danych ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & Jest to bool informujący, czy chcemy zamknąć połączenie z bazą danych, czy nie. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a2c28cded420f7073544621dff07c714b}\label{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a2c28cded420f7073544621dff07c714b}} 
+\index{Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}!Edit@{Edit}}
+\index{Edit@{Edit}!Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Admin\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Email,\+Email\+Confirmed,\+Password\+Hash,\+Security\+Stamp,\+Phone\+Number,\+Phone\+Number\+Confirmed,\+Two\+Factor\+Enabled,\+Lockout\+End\+Date\+Utc,\+Lockout\+Enabled,\+Access\+Failed\+Count,\+User\+Name\char`\"{})\mbox{]} \mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_asp_net_users}{Asp\+Net\+Users}}}]{asp\+Net\+Users }\end{DoxyParamCaption})}
+
+
+
+Metoda modyfikuje modyfikuje podanego użytkownika i zapisuje zmiany w bazie danych. Zwraca widok z listą użytkowników. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em asp\+Net\+Users} & Jest to obiekt zawierający użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a7afe758ad608c5d93b7fff424271e582}\label{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a7afe758ad608c5d93b7fff424271e582}} 
+\index{Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}!Edit@{Edit}}
+\index{Edit@{Edit}!Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Admin\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Metoda szuka użytkownika o podanym ID. Może zwrócić informacje o braku takiego użytkownika w formie Http\+Not\+Found(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Jest to id identyfikujące użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a65ac9dda78416a65fbf2d289fd9c8d2e}\label{class_wypozyczalnia_1_1_controllers_1_1_admin_controller_a65ac9dda78416a65fbf2d289fd9c8d2e}} 
+\index{Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}!Index@{Index}}
+\index{Index@{Index}!Wypozyczalnia.Controllers.AdminController@{Wypozyczalnia.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Admin\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda zwraca widok z listą urzytkowników. 
+
+\begin{DoxyReturn}{Returns}
+Action\+Result 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Moj\+Folder/workplace/\+I\+O/\+I\+O2019\+Mieszalnik/\+Wypozyczalnia/\+Wypozyczalnia/\+Controllers/\mbox{\hyperlink{_admin_controller_8cs}{Admin\+Controller.\+cs}}\end{DoxyCompactItemize}

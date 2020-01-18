@@ -1,0 +1,168 @@
+\hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller}{}\doxysection{Wypozyczalnia.\+Controllers.\+Message\+Controller Class Reference}
+\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller}\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+
+
+Kontroler wiadomosci -\/ powiadomien, problemow i indywidualnych ofert.  
+
+
+Inheritance diagram for Wypozyczalnia.\+Controllers.\+Message\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wypozyczalnia_1_1_controllers_1_1_message_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_ac0993fdcce310ca0da48a895ae1b7a9b}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca widok powiadomien. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a9c0cea77d249aab4bbf7a203246d97e7}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Zwraca widok szczegolow powiadomienia. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_af2b514d5ab71cfb1af4cd7ab9f0f216a}{Delete}} (int? id)
+\begin{DoxyCompactList}\small\item\em Usuwa powiadomienie. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a2b307b913f4fe513480527ada0c9eab6}{Delete\+Confirmed}} (int id)
+\begin{DoxyCompactList}\small\item\em Zwraca potwierdzenie o usunieciu powiadomienia. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a4696751769785b19dd12e62eaa62840e}{Create\+Problem}} ()
+\begin{DoxyCompactList}\small\item\em Tworzy nowe powiadomienie. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a866ab175d6fe566f27588364b3d06301}{Create\+Problem}} (\mbox{[}Bind(Include=\char`\"{}Id,Tytul,Opis,Nr\+Rejestracyjny,Data,User\+Id\char`\"{})\mbox{]} Problem problem)
+\begin{DoxyCompactList}\small\item\em Tworzy nowy problem. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a3ab7841d726924d9924ae51749066b68}{Create\+Individual\+Offer}} ()
+\begin{DoxyCompactList}\small\item\em Tworzy indywidualna oferte. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a9369d7aabaf53ec3cd8f362d58f666c3}{Create\+Individual\+Offer}} (\mbox{[}Bind(Include=\char`\"{}Id,Marka,Model,Rok,Limit\+Kilometrow,Opony,AC,Opis,User\+Id\char`\"{})\mbox{]} Indywidualna\+Oferta indywidualna\+Oferta)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a0a177b427c301966ad32c5c8b821d511}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kontroler wiadomosci -\/ powiadomien, problemow i indywidualnych ofert. 
+
+Kontroler wiadomości połączony z widokiem Powiadomienie 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a3ab7841d726924d9924ae51749066b68}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a3ab7841d726924d9924ae51749066b68}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!CreateIndividualOffer@{CreateIndividualOffer}}
+\index{CreateIndividualOffer@{CreateIndividualOffer}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{CreateIndividualOffer()}{CreateIndividualOffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Create\+Individual\+Offer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tworzy indywidualna oferte. 
+
+\begin{DoxyReturn}{Returns}
+zwraca widok indywidualnej oferty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a9369d7aabaf53ec3cd8f362d58f666c3}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a9369d7aabaf53ec3cd8f362d58f666c3}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!CreateIndividualOffer@{CreateIndividualOffer}}
+\index{CreateIndividualOffer@{CreateIndividualOffer}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{CreateIndividualOffer()}{CreateIndividualOffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Create\+Individual\+Offer (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Marka,\+Model,\+Rok,\+Limit\+Kilometrow,\+Opony,\+A\+C,\+Opis,\+User\+Id\char`\"{})\mbox{]} \mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_indywidualna_oferta}{Indywidualna\+Oferta}}}]{indywidualna\+Oferta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a4696751769785b19dd12e62eaa62840e}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a4696751769785b19dd12e62eaa62840e}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!CreateProblem@{CreateProblem}}
+\index{CreateProblem@{CreateProblem}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{CreateProblem()}{CreateProblem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Create\+Problem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tworzy nowe powiadomienie. 
+
+\begin{DoxyReturn}{Returns}
+zwraca widok powiadomienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a866ab175d6fe566f27588364b3d06301}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a866ab175d6fe566f27588364b3d06301}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!CreateProblem@{CreateProblem}}
+\index{CreateProblem@{CreateProblem}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{CreateProblem()}{CreateProblem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Create\+Problem (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Tytul,\+Opis,\+Nr\+Rejestracyjny,\+Data,\+User\+Id\char`\"{})\mbox{]} \mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_problem}{Problem}}}]{problem }\end{DoxyParamCaption})}
+
+
+
+Tworzy nowy problem. 
+
+\begin{DoxyReturn}{Returns}
+zwraca widok problemu 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_af2b514d5ab71cfb1af4cd7ab9f0f216a}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_af2b514d5ab71cfb1af4cd7ab9f0f216a}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!Delete@{Delete}}
+\index{Delete@{Delete}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Usuwa powiadomienie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}id\mbox{]}} & id powiadomienia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca widok danego powiadomienia lub kod bledu 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a2b307b913f4fe513480527ada0c9eab6}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a2b307b913f4fe513480527ada0c9eab6}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!DeleteConfirmed@{DeleteConfirmed}}
+\index{DeleteConfirmed@{DeleteConfirmed}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{DeleteConfirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Zwraca potwierdzenie o usunieciu powiadomienia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}id\mbox{]}} & id powiadomienia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca widok index (strona glowna) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a9c0cea77d249aab4bbf7a203246d97e7}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a9c0cea77d249aab4bbf7a203246d97e7}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!Details@{Details}}
+\index{Details@{Details}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Zwraca widok szczegolow powiadomienia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}id\mbox{]}} & id powiadomienia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca widok danego powiadomienia lub kod bledu 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a0a177b427c301966ad32c5c8b821d511}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_a0a177b427c301966ad32c5c8b821d511}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_message_controller_ac0993fdcce310ca0da48a895ae1b7a9b}\label{class_wypozyczalnia_1_1_controllers_1_1_message_controller_ac0993fdcce310ca0da48a895ae1b7a9b}} 
+\index{Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}!Index@{Index}}
+\index{Index@{Index}!Wypozyczalnia.Controllers.MessageController@{Wypozyczalnia.Controllers.MessageController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Message\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zwraca widok powiadomien. 
+
+\begin{DoxyReturn}{Returns}
+zwraca widok powiadomienia zalogowanego uzytkownika 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Moj\+Folder/workplace/\+I\+O/\+I\+O2019\+Mieszalnik/\+Wypozyczalnia/\+Wypozyczalnia/\+Controllers/\mbox{\hyperlink{_message_controller_8cs}{Message\+Controller.\+cs}}\end{DoxyCompactItemize}

@@ -7,6 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+/*!
+ * \brief Wszystkie elementy modelu generowane automatycznie z bazy danych
+ * 
+ */
 namespace Wypozyczalnia.Models
 {
     using System;

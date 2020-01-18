@@ -1,0 +1,193 @@
+\hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller}{}\doxysection{Wypozyczalnia.\+Controllers.\+Rent\+Controller Class Reference}
+\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller}\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+
+
+Kontroler do zarzadzania wypozyczonymi samochodami.  
+
+
+Inheritance diagram for Wypozyczalnia.\+Controllers.\+Rent\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wypozyczalnia_1_1_controllers_1_1_rent_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a0f3e70aea164ccfcc25a219df3928318}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Akcja do wyswietlania listy wypozyczonych samochodow. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a08b87d8926a4793419b03a5cacd4a5a8}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Akcja do wyswietlania szczegolow wypozyczonego samochodu. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a93c36b364957512d4f2c7a5f8170cd49}{Create\+Rent}} (int? id)
+\begin{DoxyCompactList}\small\item\em Akcja Http\+Get do tworzenia nowego wypozyczenia. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a0a230d70bed5f2550b8c5e994975c551}{Create\+Rent}} (\mbox{[}Bind(Include=\char`\"{}Id,Marka,Model,Rok,Limit\+Kilometrow,Opony,AC,Nr\+Rejestracyjny,Zdjecie,Cena,Poczatek\+Umowy,Koniec\+Umowy,User\+Id,Opis\char`\"{})\mbox{]} Samochod samochod)
+\begin{DoxyCompactList}\small\item\em Akcja Http\+Post do tworzenia nowego wypozyczenia. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a02c30f308ccd7373491fbf4da151df68}{Edit}} (int? id)
+\begin{DoxyCompactList}\small\item\em Akcja Http\+Get do modyfikowania wypozyczenia. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_ac363976032b667f52d6d034eea5bb125}{Edit}} (\mbox{[}Bind(Include=\char`\"{}Id,Marka,Model,Rok,Limit\+Kilometrow,Opony,AC,Nr\+Rejestracyjny,Zdjecie,Cena,Poczatek\+Umowy,Koniec\+Umowy,User\+Id,Opis\char`\"{})\mbox{]} Samochod samochod)
+\begin{DoxyCompactList}\small\item\em Akcja Http\+Post do modyfikowania wypozyczenia. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a2445184774fa85330aa42f9df9dfabee}{Delete\+Rent}} (int? id)
+\begin{DoxyCompactList}\small\item\em Akcja Http\+Get do usuwania wypozyczenia. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a1a2032854cf704711c133ed037f754da}{Delete\+Rent}} (int id)
+\begin{DoxyCompactList}\small\item\em Akcja Http\+Get do usuwania wypozyczenia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a1005c3c94ac7cbd90a8b8307c1c4acb2}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kontroler do zarzadzania wypozyczonymi samochodami. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a0a230d70bed5f2550b8c5e994975c551}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a0a230d70bed5f2550b8c5e994975c551}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!CreateRent@{CreateRent}}
+\index{CreateRent@{CreateRent}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{CreateRent()}{CreateRent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Create\+Rent (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Marka,\+Model,\+Rok,\+Limit\+Kilometrow,\+Opony,\+A\+C,\+Nr\+Rejestracyjny,\+Zdjecie,\+Cena,\+Poczatek\+Umowy,\+Koniec\+Umowy,\+User\+Id,\+Opis\char`\"{})\mbox{]} \mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_samochod}{Samochod}}}]{samochod }\end{DoxyParamCaption})}
+
+
+
+Akcja Http\+Post do tworzenia nowego wypozyczenia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samochod} & Zmodyfikowany samochod do wypozyczenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result Widok do tworzenia wypozyczenia lub przekierowanie do akcji Index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a93c36b364957512d4f2c7a5f8170cd49}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a93c36b364957512d4f2c7a5f8170cd49}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!CreateRent@{CreateRent}}
+\index{CreateRent@{CreateRent}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{CreateRent()}{CreateRent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Create\+Rent (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Akcja Http\+Get do tworzenia nowego wypozyczenia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identyfikator wybranego samochodu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result Widok do tworzenia wypozyczenia lub blad 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a1a2032854cf704711c133ed037f754da}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a1a2032854cf704711c133ed037f754da}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!DeleteRent@{DeleteRent}}
+\index{DeleteRent@{DeleteRent}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{DeleteRent()}{DeleteRent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Delete\+Rent (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Akcja Http\+Get do usuwania wypozyczenia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identyfikator wybranego samochodu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result Przekierowanie do akcji Index lub blad 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a2445184774fa85330aa42f9df9dfabee}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a2445184774fa85330aa42f9df9dfabee}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!DeleteRent@{DeleteRent}}
+\index{DeleteRent@{DeleteRent}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{DeleteRent()}{DeleteRent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Delete\+Rent (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Akcja Http\+Get do usuwania wypozyczenia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identyfikator wybranego samochodu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result Widok potwiedzenia usuniecia wypozyczenia lub blad 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a08b87d8926a4793419b03a5cacd4a5a8}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a08b87d8926a4793419b03a5cacd4a5a8}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!Details@{Details}}
+\index{Details@{Details}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Akcja do wyswietlania szczegolow wypozyczonego samochodu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identyfikator wybranego samochodu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result Widok z szczegolami danego wyswietlenia lub blad 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a1005c3c94ac7cbd90a8b8307c1c4acb2}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a1005c3c94ac7cbd90a8b8307c1c4acb2}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_ac363976032b667f52d6d034eea5bb125}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_ac363976032b667f52d6d034eea5bb125}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!Edit@{Edit}}
+\index{Edit@{Edit}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Marka,\+Model,\+Rok,\+Limit\+Kilometrow,\+Opony,\+A\+C,\+Nr\+Rejestracyjny,\+Zdjecie,\+Cena,\+Poczatek\+Umowy,\+Koniec\+Umowy,\+User\+Id,\+Opis\char`\"{})\mbox{]} \mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_samochod}{Samochod}}}]{samochod }\end{DoxyParamCaption})}
+
+
+
+Akcja Http\+Post do modyfikowania wypozyczenia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samochod} & Zmodyfikowany samochod \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result Widok do modyfikowania wypozyczenia lub przekierowanie do akcji Index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a02c30f308ccd7373491fbf4da151df68}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a02c30f308ccd7373491fbf4da151df68}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!Edit@{Edit}}
+\index{Edit@{Edit}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Akcja Http\+Get do modyfikowania wypozyczenia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identyfikator wybranego samochodu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Action\+Result Widok do modyfikowania wypozyczenia lub blad 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a0f3e70aea164ccfcc25a219df3928318}\label{class_wypozyczalnia_1_1_controllers_1_1_rent_controller_a0f3e70aea164ccfcc25a219df3928318}} 
+\index{Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}!Index@{Index}}
+\index{Index@{Index}!Wypozyczalnia.Controllers.RentController@{Wypozyczalnia.Controllers.RentController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Rent\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Akcja do wyswietlania listy wypozyczonych samochodow. 
+
+\begin{DoxyReturn}{Returns}
+Action\+Result Widok z lista wypozyczonych samochodow 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Moj\+Folder/workplace/\+I\+O/\+I\+O2019\+Mieszalnik/\+Wypozyczalnia/\+Wypozyczalnia/\+Controllers/\mbox{\hyperlink{_rent_controller_8cs}{Rent\+Controller.\+cs}}\end{DoxyCompactItemize}

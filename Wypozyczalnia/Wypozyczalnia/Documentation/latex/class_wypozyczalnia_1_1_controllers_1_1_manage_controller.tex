@@ -1,0 +1,432 @@
+\hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller}{}\doxysection{Wypozyczalnia.\+Controllers.\+Manage\+Controller Class Reference}
+\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller}\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+
+
+klasa odpowiedzialna za zarządzanie kontem użytkownika  
+
+
+Inheritance diagram for Wypozyczalnia.\+Controllers.\+Manage\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_wypozyczalnia_1_1_controllers_1_1_manage_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69}{Manage\+Message\+Id}} \{ \newline
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af08d36b2147213fadb3b223d149ac802}{Manage\+Message\+Id.\+Add\+Phone\+Success}}, 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a0053618c57496fec45c67daf91919394}{Manage\+Message\+Id.\+Change\+Password\+Success}}, 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af17987d9118fd576fed3cbec8d11bd8b}{Manage\+Message\+Id.\+Set\+Two\+Factor\+Success}}, 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af17ca72fcf8adaa46d5e87b12ec3a27d}{Manage\+Message\+Id.\+Set\+Password\+Success}}, 
+\newline
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a46e53931d0e837638a46368b2b04ba6a}{Manage\+Message\+Id.\+Remove\+Login\+Success}}, 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a70460d8db9c29752c1f591eb67a60fdc}{Manage\+Message\+Id.\+Remove\+Phone\+Success}}, 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a902b0d55fddef6f8d651fe1035b7d4bd}{Manage\+Message\+Id.\+Error}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a4337a14bbe4acfb9f0d57b36cc80d0c5}{Manage\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em konstruktor bezargumentowy \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a01086cd3e456fcc88d23658b7b0f595d}{Manage\+Controller}} (\mbox{\hyperlink{class_wypozyczalnia_1_1_application_user_manager}{Application\+User\+Manager}} user\+Manager, \mbox{\hyperlink{class_wypozyczalnia_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} sign\+In\+Manager)
+\begin{DoxyCompactList}\small\item\em konstruktor przyjmujący User\+Manager oraz Sign\+In\+Manager \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a7edb09fef68365ec001a587f521ba10f}{Index}} (\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69}{Manage\+Message\+Id}}? message)
+\begin{DoxyCompactList}\small\item\em metoda zarządza zmianami na koncie i zwraca wiadomość \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a8e6d763098734f2b29505f07c0dd2f3c}{Remove\+Login}} (string login\+Provider, string provider\+Key)
+\begin{DoxyCompactList}\small\item\em metoda usuwa konto użytkownika \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a27fda89afaeb55901cd21ea1021a2290}{Add\+Phone\+Number}} ()
+\begin{DoxyCompactList}\small\item\em metoda przypisuje użytkownikowi numer telefonu \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae356c24d13822278242c49cd98b9a187}{Add\+Phone\+Number}} (\mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em metoda przypisuje użytkownikowi numer telefonu \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ace8004dd9cd33eb8e402e1104f579845}{Enable\+Two\+Factor\+Authentication}} ()
+\begin{DoxyCompactList}\small\item\em metoda włączająca weryfikację dwuetapową \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_aa462f9d70cad2fc97ef2dcc97e4915e9}{Disable\+Two\+Factor\+Authentication}} ()
+\begin{DoxyCompactList}\small\item\em metoda wyłączająca weryfikację dwuetapową \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a9b624b0645afae11485636595219e3bd}{Verify\+Phone\+Number}} (string phone\+Number)
+\begin{DoxyCompactList}\small\item\em metoda weryfikuje numer telefonu \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae203c272b89b91a6aa9143a60ebcc29f}{Verify\+Phone\+Number}} (\mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em metoda weryfikuje numer telefonu \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a511b4a66009897f8c9cfc274459af193}{Remove\+Phone\+Number}} ()
+\begin{DoxyCompactList}\small\item\em metoda usuwa numer telefonu \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a571f697dc2eadea0860bbd908978719b}{Change\+Password}} ()
+\begin{DoxyCompactList}\small\item\em metoda zmienia hasło \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a36489dcae952a0ecbaced54d2bcef0ec}{Change\+Password}} (\mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em metoda zmienia hasło \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae21dd806e6b4845e88d605daf75f9792}{Set\+Password}} ()
+\begin{DoxyCompactList}\small\item\em metoda ustawia hasło \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a477a656c0fef1460b848187e155508cf}{Set\+Password}} (\mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em metoda ustawia hasło \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a1a905b670cc06529ef4f9c9ebe6ffc0a}{Manage\+Logins}} (\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69}{Manage\+Message\+Id}}? message)
+\begin{DoxyCompactList}\small\item\em metoda zarządza loginem \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a648f5f98caa244501c8f21d92dd0cd4b}{Link\+Login}} (string provider)
+\begin{DoxyCompactList}\small\item\em metoda łączy login użytkownikiem \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a2cb03168359decf6d841cd24049cfd7b}{Link\+Login\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em wywołanie zwrotne łączenia loginu \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a2978e1fd5399ef7dcf76a27b9a469249}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}?? \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a1b1dbbf7997cdda63640edd3b6b2a026}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em menedżer logowania \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wypozyczalnia_1_1_application_user_manager}{Application\+User\+Manager}}?? \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a4ac38c158b2756326bfed9c3a7832a00}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em menedżer konta użytkownika \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+klasa odpowiedzialna za zarządzanie kontem użytkownika 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!ManageMessageId@{ManageMessageId}}
+\index{ManageMessageId@{ManageMessageId}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageMessageId}{ManageMessageId}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69}{Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Manage\+Message\+Id}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AddPhoneSuccess@{AddPhoneSuccess}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!AddPhoneSuccess@{AddPhoneSuccess}}}\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af08d36b2147213fadb3b223d149ac802}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af08d36b2147213fadb3b223d149ac802}} 
+Add\+Phone\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ChangePasswordSuccess@{ChangePasswordSuccess}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!ChangePasswordSuccess@{ChangePasswordSuccess}}}\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a0053618c57496fec45c67daf91919394}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a0053618c57496fec45c67daf91919394}} 
+Change\+Password\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SetTwoFactorSuccess@{SetTwoFactorSuccess}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!SetTwoFactorSuccess@{SetTwoFactorSuccess}}}\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af17987d9118fd576fed3cbec8d11bd8b}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af17987d9118fd576fed3cbec8d11bd8b}} 
+Set\+Two\+Factor\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SetPasswordSuccess@{SetPasswordSuccess}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!SetPasswordSuccess@{SetPasswordSuccess}}}\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af17ca72fcf8adaa46d5e87b12ec3a27d}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69af17ca72fcf8adaa46d5e87b12ec3a27d}} 
+Set\+Password\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RemoveLoginSuccess@{RemoveLoginSuccess}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!RemoveLoginSuccess@{RemoveLoginSuccess}}}\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a46e53931d0e837638a46368b2b04ba6a}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a46e53931d0e837638a46368b2b04ba6a}} 
+Remove\+Login\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RemovePhoneSuccess@{RemovePhoneSuccess}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!RemovePhoneSuccess@{RemovePhoneSuccess}}}\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a70460d8db9c29752c1f591eb67a60fdc}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a70460d8db9c29752c1f591eb67a60fdc}} 
+Remove\+Phone\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!Error@{Error}}}\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a902b0d55fddef6f8d651fe1035b7d4bd}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69a902b0d55fddef6f8d651fe1035b7d4bd}} 
+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a4337a14bbe4acfb9f0d57b36cc80d0c5}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a4337a14bbe4acfb9f0d57b36cc80d0c5}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!ManageController@{ManageController}}
+\index{ManageController@{ManageController}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageController()}{ManageController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+konstruktor bezargumentowy 
+
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a01086cd3e456fcc88d23658b7b0f595d}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a01086cd3e456fcc88d23658b7b0f595d}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!ManageController@{ManageController}}
+\index{ManageController@{ManageController}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageController()}{ManageController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wypozyczalnia_1_1_application_user_manager}{Application\+User\+Manager}}}]{user\+Manager,  }\item[{\mbox{\hyperlink{class_wypozyczalnia_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}}]{sign\+In\+Manager }\end{DoxyParamCaption})}
+
+
+
+konstruktor przyjmujący User\+Manager oraz Sign\+In\+Manager 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Manager} & menedżer użytkownika \\
+\hline
+{\em sing\+In\+Manager} & menedżer logowania \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a27fda89afaeb55901cd21ea1021a2290}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a27fda89afaeb55901cd21ea1021a2290}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
+\index{AddPhoneNumber@{AddPhoneNumber}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+metoda przypisuje użytkownikowi numer telefonu 
+
+\begin{DoxyReturn}{Returns}
+metoda zwraca widok klasy Action\+Result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae356c24d13822278242c49cd98b9a187}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae356c24d13822278242c49cd98b9a187}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
+\index{AddPhoneNumber@{AddPhoneNumber}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+metoda przypisuje użytkownikowi numer telefonu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & reprezentuje odpowiedni model dodania numeru\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca widok lub przekierowanie do weryfikacji numeru telefonu 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a571f697dc2eadea0860bbd908978719b}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a571f697dc2eadea0860bbd908978719b}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!ChangePassword@{ChangePassword}}
+\index{ChangePassword@{ChangePassword}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ChangePassword()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+metoda zmienia hasło 
+
+\begin{DoxyReturn}{Returns}
+metoda zwraca widok 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a36489dcae952a0ecbaced54d2bcef0ec}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a36489dcae952a0ecbaced54d2bcef0ec}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!ChangePassword@{ChangePassword}}
+\index{ChangePassword@{ChangePassword}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ChangePassword()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+metoda zmienia hasło 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & do zmiany hasła \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca widok lubprzekierowanie do udanej zmiany hasła 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_aa462f9d70cad2fc97ef2dcc97e4915e9}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_aa462f9d70cad2fc97ef2dcc97e4915e9}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!DisableTwoFactorAuthentication@{DisableTwoFactorAuthentication}}
+\index{DisableTwoFactorAuthentication@{DisableTwoFactorAuthentication}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{DisableTwoFactorAuthentication()}{DisableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Disable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+metoda wyłączająca weryfikację dwuetapową 
+
+\begin{DoxyReturn}{Returns}
+metoda zwraca przekierowanie do zarządzania 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a2978e1fd5399ef7dcf76a27b9a469249}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a2978e1fd5399ef7dcf76a27b9a469249}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ace8004dd9cd33eb8e402e1104f579845}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ace8004dd9cd33eb8e402e1104f579845}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!EnableTwoFactorAuthentication@{EnableTwoFactorAuthentication}}
+\index{EnableTwoFactorAuthentication@{EnableTwoFactorAuthentication}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{EnableTwoFactorAuthentication()}{EnableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Enable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+metoda włączająca weryfikację dwuetapową 
+
+\begin{DoxyReturn}{Returns}
+metoda zwraca przekierowanie do zarządzania 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a7edb09fef68365ec001a587f521ba10f}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a7edb09fef68365ec001a587f521ba10f}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!Index@{Index}}
+\index{Index@{Index}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69}{Manage\+Message\+Id}}?}]{message }\end{DoxyParamCaption})}
+
+
+
+metoda zarządza zmianami na koncie i zwraca wiadomość 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & wiadomość co uległo zmianie\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+metoda zwraca widok 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a648f5f98caa244501c8f21d92dd0cd4b}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a648f5f98caa244501c8f21d92dd0cd4b}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!LinkLogin@{LinkLogin}}
+\index{LinkLogin@{LinkLogin}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{LinkLogin()}{LinkLogin()}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Link\+Login (\begin{DoxyParamCaption}\item[{string}]{provider }\end{DoxyParamCaption})}
+
+
+
+metoda łączy login użytkownikiem 
+
+
+\begin{DoxyParams}{Parameters}
+{\em provider} & odpowiedni login \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a2cb03168359decf6d841cd24049cfd7b}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a2cb03168359decf6d841cd24049cfd7b}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!LinkLoginCallback@{LinkLoginCallback}}
+\index{LinkLoginCallback@{LinkLoginCallback}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{LinkLoginCallback()}{LinkLoginCallback()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Link\+Login\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+wywołanie zwrotne łączenia loginu 
+
+\begin{DoxyReturn}{Returns}
+zwraca przekierowanie do zarządzania 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a1a905b670cc06529ef4f9c9ebe6ffc0a}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a1a905b670cc06529ef4f9c9ebe6ffc0a}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!ManageLogins@{ManageLogins}}
+\index{ManageLogins@{ManageLogins}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageLogins()}{ManageLogins()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Manage\+Logins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae8d4aeaf4bf1c09cad753fee69fe4f69}{Manage\+Message\+Id}}?}]{message }\end{DoxyParamCaption})}
+
+
+
+metoda zarządza loginem 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wiadomość} & z systemu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+metoda zwraca widok z błędem lub z odpowiednimi loginami 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a8e6d763098734f2b29505f07c0dd2f3c}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a8e6d763098734f2b29505f07c0dd2f3c}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!RemoveLogin@{RemoveLogin}}
+\index{RemoveLogin@{RemoveLogin}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{RemoveLogin()}{RemoveLogin()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Remove\+Login (\begin{DoxyParamCaption}\item[{string}]{login\+Provider,  }\item[{string}]{provider\+Key }\end{DoxyParamCaption})}
+
+
+
+metoda usuwa konto użytkownika 
+
+\begin{DoxyReturn}{Returns}
+metoda zwraca przekierowanie do zarządzania 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a511b4a66009897f8c9cfc274459af193}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a511b4a66009897f8c9cfc274459af193}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!RemovePhoneNumber@{RemovePhoneNumber}}
+\index{RemovePhoneNumber@{RemovePhoneNumber}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{RemovePhoneNumber()}{RemovePhoneNumber()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Remove\+Phone\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+metoda usuwa numer telefonu 
+
+\begin{DoxyReturn}{Returns}
+metoda zwraca przekierowanie do błędu usunięcia lub do udanego dodania 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae21dd806e6b4845e88d605daf75f9792}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae21dd806e6b4845e88d605daf75f9792}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!SetPassword@{SetPassword}}
+\index{SetPassword@{SetPassword}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SetPassword()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+metoda ustawia hasło 
+
+\begin{DoxyReturn}{Returns}
+metoda zwraca widok 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a477a656c0fef1460b848187e155508cf}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a477a656c0fef1460b848187e155508cf}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!SetPassword@{SetPassword}}
+\index{SetPassword@{SetPassword}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SetPassword()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+metoda ustawia hasło 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & model do zmiany hasła \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca przekierowanie do udanego ustawienia hasła lub widok 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a9b624b0645afae11485636595219e3bd}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a9b624b0645afae11485636595219e3bd}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{string}]{phone\+Number }\end{DoxyParamCaption})}
+
+
+
+metoda weryfikuje numer telefonu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phone\+Number} & weryfikowany numer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+metoda zwraca widok z błędem lub poprawnym numerem 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae203c272b89b91a6aa9143a60ebcc29f}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_ae203c272b89b91a6aa9143a60ebcc29f}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_wypozyczalnia_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+metoda weryfikuje numer telefonu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & model do weryfikacji numeru\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca widok lub przekierowanie do udanego dodania numeru 
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a1b1dbbf7997cdda63640edd3b6b2a026}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a1b1dbbf7997cdda63640edd3b6b2a026}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!SignInManager@{SignInManager}}
+\index{SignInManager@{SignInManager}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SignInManager}{SignInManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wypozyczalnia_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}?? Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+menedżer logowania 
+
+\mbox{\Hypertarget{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a4ac38c158b2756326bfed9c3a7832a00}\label{class_wypozyczalnia_1_1_controllers_1_1_manage_controller_a4ac38c158b2756326bfed9c3a7832a00}} 
+\index{Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}!UserManager@{UserManager}}
+\index{UserManager@{UserManager}!Wypozyczalnia.Controllers.ManageController@{Wypozyczalnia.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{UserManager}{UserManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wypozyczalnia_1_1_application_user_manager}{Application\+User\+Manager}}?? Wypozyczalnia.\+Controllers.\+Manage\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+menedżer konta użytkownika 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Moj\+Folder/workplace/\+I\+O/\+I\+O2019\+Mieszalnik/\+Wypozyczalnia/\+Wypozyczalnia/\+Controllers/\mbox{\hyperlink{_manage_controller_8cs}{Manage\+Controller.\+cs}}\end{DoxyCompactItemize}
