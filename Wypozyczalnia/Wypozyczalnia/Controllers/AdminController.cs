@@ -10,6 +10,10 @@ using Wypozyczalnia.Models;
 
 namespace Wypozyczalnia.Controllers
 {
+    /**
+         * @brief
+         * AdminController to kontroler administratora, pozwala na moderowanie użytkownikami strony        
+         */
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
