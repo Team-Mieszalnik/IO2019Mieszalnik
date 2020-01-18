@@ -10,8 +10,17 @@ using Wypozyczalnia.Models;
 
 namespace Wypozyczalnia.Controllers
 {
+    /**
+     * @brief
+     * Kontroler do kontrolowania strony głównej z wszystkimi ofertami wypozyczalni
+     * 
+     */
     public class HomeController : Controller
     {
+        /**
+        * @brief 
+        * Połączenie z bazą danych
+        */
         private Entities5 db = new Entities5();
 
         //// GET: Home
@@ -20,12 +29,24 @@ namespace Wypozyczalnia.Controllers
         //    return View(db.Samochod.ToList());
         //}
 
+        /**
+        * @brief 
+        * Zwraca index html strony głownej czyli liste wszsytkich dostepnych ofert wypozyczalni
+        * @return View
+        * 
+        */
         // GET: Home
         public ActionResult Index()
         {
             return View(db.Samochod.Select(n => n).Where(c => c.UserId == null));
         }
 
+        /**
+        * @brief 
+        * Zwraca szczegoly poszczegolnego wypozyczenia
+        * @return View
+        * 
+        */
         // GET: Home/Details/5
         public ActionResult Details(int? id)
         {
