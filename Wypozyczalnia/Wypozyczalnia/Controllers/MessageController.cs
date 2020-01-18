@@ -24,10 +24,9 @@ namespace Wypozyczalnia.Controllers
 
         // GET: Message
         /*! 
-           * \brief Zwraca widok powiadomien
-           * 
-           * \return zwraca ViewResult - powiadomienia zalogowanego uzytkownika
-           */
+         * \brief Zwraca widok powiadomien
+         * \return zwraca widok powiadomienia zalogowanego uzytkownika
+         */
         public ActionResult Index()
         {
             string userId = System.Web.HttpContext.Current.User.Identity.GetUserId().ToString();
@@ -35,6 +34,11 @@ namespace Wypozyczalnia.Controllers
             return View(db.Powiadomienie.Select(n => n).Where(s => s.UserId.Equals(userId)).ToList());
         }
 
+        /*! 
+         * \brief Zwraca widok szczegolow powiadomienia
+         * \param[id] id powiadomienia
+         * \return zwraca widok danego powiadomienia lub kod bledu
+         */
         // GET: Message/Details/5
         public ActionResult Details(int? id)
         {
@@ -50,7 +54,11 @@ namespace Wypozyczalnia.Controllers
             return View(powiadomienie);
         }
 
-
+        /*! 
+         * \brief Usuwa powiadomienie
+         * \param[id] id powiadomienia
+         * \return zwraca widok danego powiadomienia lub kod bledu
+         */
         // GET: Message/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -65,7 +73,11 @@ namespace Wypozyczalnia.Controllers
             }
             return View(powiadomienie);
         }
-
+        /*! 
+         * \brief Zwraca potwierdzenie o usunieciu powiadomienia
+         * \param[id] id powiadomienia
+         * \return zwraca widok index (strona glowna)
+         */
         // POST: Message/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -86,9 +98,10 @@ namespace Wypozyczalnia.Controllers
             base.Dispose(disposing);
         }
 
-
-
-
+        /*! 
+         * \brief Tworzy nowe powiadomienie
+         * \return zwraca widok powiadomienia
+         */
         // GET: Rent/CreateProblem
         public ActionResult CreateProblem()
         {
@@ -100,6 +113,10 @@ namespace Wypozyczalnia.Controllers
             return View(problem);
         }
 
+        /*! 
+         * \brief Tworzy nowy problem
+         * \return zwraca widok problemu
+         */
         // POST: Rent/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -118,7 +135,10 @@ namespace Wypozyczalnia.Controllers
         }
 
 
-
+        /*! 
+         * \brief Tworzy indywidualna oferte
+         * \return zwraca widok indywidualnej oferty
+         */
         // GET: Rent/CreateProblem
         public ActionResult CreateIndividualOffer()
         {
