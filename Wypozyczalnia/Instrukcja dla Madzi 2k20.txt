@@ -1,4 +1,4 @@
-Witaj Magdaleno,
+﻿Witaj Magdaleno,
 
 w tym pliku znajdziesz swój przydział obowiązków:
 
@@ -7,4 +7,4 @@ w tym pliku znajdziesz swój przydział obowiązków:
 	wykonać wszystkie czynności znajdujące się w pliku testy.xlsx
 	dane przykładowego konta z powiadomieniami: 
 		Madzia@gmail.com
-		hasło:  AHfi4`GI04-DDFrF356
+		hasło:  AHfi4`GI04-DDFrF356-`fIk35
