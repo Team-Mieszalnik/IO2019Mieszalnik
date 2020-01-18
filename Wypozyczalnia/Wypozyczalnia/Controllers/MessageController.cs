@@ -11,12 +11,23 @@ using Wypozyczalnia.Models;
 
 namespace Wypozyczalnia.Controllers
 {
+    /*! 
+     * \brief Kontroler wiadomości
+     * 
+     * Kontroler wiadomości połączony z widokiem Powiadomienie
+     */
+
     [Authorize]
     public class MessageController : Controller
     {
         private Entities5 db = new Entities5();
 
         // GET: Message
+        /*! 
+           * \brief Zwraca widok powiadomien
+           * 
+           * \return zwraca ViewResult - powiadomienia zalogowanego uzytkownika
+           */
         public ActionResult Index()
         {
             string userId = System.Web.HttpContext.Current.User.Identity.GetUserId().ToString();
