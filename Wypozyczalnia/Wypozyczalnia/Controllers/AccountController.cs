@@ -12,9 +12,17 @@ using Wypozyczalnia.Models;
 
 namespace Wypozyczalnia.Controllers
 {
+    /**
+       * @brief
+       * AcccountController to kontroler konta, pozwala na moderowanie wlasnym kontem, 
+       * wprowadzanie zmian dozwolonych dla zwyklego uzytkownika        
+       */
+
     [Authorize]
     public class AccountController : Controller
     {
+
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -22,7 +30,7 @@ namespace Wypozyczalnia.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -34,9 +42,9 @@ namespace Wypozyczalnia.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -51,7 +59,13 @@ namespace Wypozyczalnia.Controllers
                 _userManager = value;
             }
         }
-
+        /**
+        * @brief
+        * Metoda odoowiadajaca za logowanie uzytkownika
+        * 
+        * @param returnUrl Jest to string przechowujący adres url
+        * @return ActionResult
+        */
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -60,6 +74,14 @@ namespace Wypozyczalnia.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
+        /**
+        * @brief
+        * Metoda odoowiadajaca za logowanie uzytkownika   
+        * 
+        * @param returnUrl Jest to string przechowujący adres url
+        * @param model jest to aktualny model
+        * @return ActionResult
+        */
 
         //
         // POST: /Account/Login
@@ -91,6 +113,15 @@ namespace Wypozyczalnia.Controllers
             }
         }
 
+        /**
+        * @brief
+        * Metoda odoowiadajaca za weryfikacje kodu   
+        * 
+        * @param returnUrl Jest to string przechowujący adres url
+        * @param rememberMe jest to bool informujacy o tym czy dana zmienna pamieta poprzednia
+        * @param provider aktualny uzytkownik
+        * @return ActionResult
+        */
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]
@@ -104,6 +135,13 @@ namespace Wypozyczalnia.Controllers
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
+        /**
+        * @brief
+        * Metoda odpowiadajaca za weryfikowanie kodu  
+        * 
+        * @param model Jest to aktualny model
+        * @return ActionResult
+        */
         //
         // POST: /Account/VerifyCode
         [HttpPost]
@@ -120,7 +158,7 @@ namespace Wypozyczalnia.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -133,7 +171,12 @@ namespace Wypozyczalnia.Controllers
                     return View(model);
             }
         }
-
+        /**
+        * @brief
+        * Metoda odpowiadajaca za rejestracje   
+        * 
+        * @return ActionResult
+        */
         //
         // GET: /Account/Register
         [AllowAnonymous]
@@ -142,6 +185,14 @@ namespace Wypozyczalnia.Controllers
             return View();
         }
 
+
+        /**
+        * @brief
+        * Metoda odpowiadajaca za rejestracje    
+        * 
+        * @param model aktualny model
+        * @return ActionResult
+        */
         //
         // POST: /Account/Register
         [HttpPost]
@@ -155,8 +206,8 @@ namespace Wypozyczalnia.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -172,6 +223,14 @@ namespace Wypozyczalnia.Controllers
             return View(model);
         }
 
+        /**
+        * @brief
+        * Metoda potwierdza email
+        * 
+        * @param userId id danego uzytkownika
+        * @param code kod uzytkownika
+        * @return ActionResult
+        */
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -184,7 +243,12 @@ namespace Wypozyczalnia.Controllers
             var result = await UserManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
-
+        /**
+        * @brief
+        * Metoda przypomina haslo    
+        * 
+        * @return ActionResult
+        */
         //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
@@ -193,6 +257,13 @@ namespace Wypozyczalnia.Controllers
             return View();
         }
 
+        /**
+        * @brief
+        * Metoda przypomina haslo
+        * 
+        * @param model aktualny model
+        * @return ActionResult
+        */
         //
         // POST: /Account/ForgotPassword
         [HttpPost]
@@ -221,6 +292,12 @@ namespace Wypozyczalnia.Controllers
             return View(model);
         }
 
+        /**
+        * @brief
+        * Metoda przypomina haslo    
+        * 
+        * @return ActionResult
+        */
         //
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
@@ -229,6 +306,13 @@ namespace Wypozyczalnia.Controllers
             return View();
         }
 
+        /**
+      * @brief
+      * Metoda zmienia haslo   
+      * 
+      * @param code kod uzytkownika
+      * @return ActionResult
+      */
         //
         // GET: /Account/ResetPassword
         [AllowAnonymous]
@@ -237,6 +321,13 @@ namespace Wypozyczalnia.Controllers
             return code == null ? View("Error") : View();
         }
 
+        /**
+        * @brief
+        * Metoda zmienia haslo
+        * 
+        * @param model aktualny model
+        * @return ActionResult
+        */
         //
         // POST: /Account/ResetPassword
         [HttpPost]
@@ -262,7 +353,12 @@ namespace Wypozyczalnia.Controllers
             AddErrors(result);
             return View();
         }
-
+        /**
+        * @brief
+        * Metoda zmienia haslo  
+        * 
+        * @return ActionResult
+        */
         //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
@@ -271,6 +367,14 @@ namespace Wypozyczalnia.Controllers
             return View();
         }
 
+        /**
+        * @brief
+        * Metoda tworzy uzytkownika   
+        * 
+        * @param returnUrl Jest to string przechowujący adres url
+        * @param provider dany uzytkownik
+        * @return ActionResult
+        */
         //
         // POST: /Account/ExternalLogin
         [HttpPost]
@@ -282,6 +386,14 @@ namespace Wypozyczalnia.Controllers
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
 
+        /**
+        * @brief
+        * Metoda wykonuje zadanie, wysyla kod    
+        * 
+        * @param returnUrl Jest to string przechowujący adres url
+        * @param rememberMe jest to bool informujacy o tym czy dana zmienna pamieta poprzednia
+        * @return ActionResult
+        */
         //
         // GET: /Account/SendCode
         [AllowAnonymous]
@@ -296,7 +408,13 @@ namespace Wypozyczalnia.Controllers
             var factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
-
+        /**
+        * @brief
+        * Metoda wykonuje zadanie        
+        * 
+        * @param model Jest to aktualny model
+        * @return ActionResult
+        */
         //
         // POST: /Account/SendCode
         [HttpPost]
@@ -316,6 +434,15 @@ namespace Wypozyczalnia.Controllers
             }
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
+
+
+        /**
+        * @brief
+        * Metoda wykonuje zadanie        
+        * 
+        * @param returnUrl Jest to string przechowujący adres url
+        * @return ActionResult
+        */
 
         //
         // GET: /Account/ExternalLoginCallback
@@ -347,6 +474,15 @@ namespace Wypozyczalnia.Controllers
             }
         }
 
+
+        /**
+        * @brief
+        * Metoda realizujaca wybrane zadanie       
+        * 
+        * @param model Jest to aktualny model
+        * @param returnUrl Jest to string przechowujący adres url
+        * @return ActionResult
+        */
         //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
@@ -385,6 +521,13 @@ namespace Wypozyczalnia.Controllers
             return View(model);
         }
 
+
+        /**
+        * @brief
+        * Metoda wylogowuje aktualnie zalogowanego uzytkownika        
+        * 
+        * @return ActionResult
+        */
         //
         // POST: /Account/LogOff
         [HttpPost]
@@ -402,6 +545,15 @@ namespace Wypozyczalnia.Controllers
         {
             return View();
         }
+
+
+        /**
+     * @brief
+     * Metoda zamyka połączenie z bazą danych        
+     * 
+     * @param disposing Jest to bool informujący, czy chcemy zamknąć połączenie z bazą danych, czy nie.
+     * @return void
+     */
 
         protected override void Dispose(bool disposing)
         {
